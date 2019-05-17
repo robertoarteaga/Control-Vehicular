@@ -1,0 +1,110 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+[class*="fontawesome-"]:before {
+  font-family: "Montserrat", sans-serif;
+}
+:root{
+    --pink: #171e48;
+    --grey: #8c8c8c; 
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Montserrat", sans-serif !important;
+    -webkit-appearance: none;
+}
+.flex{
+    display: flex;
+}
+.flex-center{
+    align-items: center;
+    justify-content: center;
+}
+.flex-column{
+    flex-flow: column;
+}
+.container-absolute{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.container-menu{
+    width: 20%;
+    height: 100%;
+    max-width: 220px;
+    min-width: 220px;
+    background-color: var(--pink);
+}
+.container-right{
+    width: 90%;
+    height: 100%;
+}
+.container-header{
+    width: 100%;
+    height: 8%;
+}
+.container-content{
+    width: 100%;
+    height: 92%;
+    background-color: #fbfbfb;
+    align-items: flex-end;
+    justify-content: center;
+}
+.container-card{
+    width: 95%;
+    height: 95%;
+    background-color: white;
+    border-radius: 12px 12px 0px 0px;
+}
+.container-nav{
+    height: 100%;
+    width: calc(100%/3);
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--grey);
+}
+.container-info{
+    margin-left: 20px;
+}
+.container-logo{
+    background-image: url(../img/uaq.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+}
+.container-name{
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+.container-menu-title{
+    height: 10%;
+    width: 100%;
+    align-items: center;
+}
+.container-menu-title > h1{
+    color: white;
+    font-size: 30px;
+    margin-left: 10%;
+    font-weight: bold;
+}
+.container-menu-links{
+    height: 80%;
+    margin-left: 15%;
+    margin-top: 20px;
+    color: white;
+    font-weight: bold;
+}
+.container-menu-logout{
+    height: 10%;
+    width: 100%;
+    font-weight: bold;
+    color: white;
+}
+.container-menu-links > li{
+    margin-left: 10px !important;
+    font-size: 15px;
+    color: white !important;
+    margin-top: 10px;
+    text-decoration: none;
+    list-style: none;
+  }

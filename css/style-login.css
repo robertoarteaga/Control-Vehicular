@@ -1,0 +1,128 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+[class*="fontawesome-"]:before {
+    font-family: 'FontAwesome', sans-serif;
+}
+:root{
+    --pink: #3186c3;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.flex{
+    display: flex;
+}
+.flex-center{
+    align-items: center;
+    justify-content: center;
+}
+.flex-column{
+    flex-flow: column;
+}
+.container-absolute{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/bg.png");
+    /* background-image: url("https://i.pinimg.com/originals/32/16/0a/32160a5dceabe4280558004212e8aa9e.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* -webkit-clip-path: polygon(0 0, 59% 0, 71% 100%, 0 100%);
+    clip-path: polygon(0 0, 59% 0, 71% 100%, 0 100%); */
+    /* -webkit-filter: opacity(0.5); /* 0.5 = 50% */ 
+    /* filter: opacity(0.8); */
+}
+.container-left{
+    height: 100%;
+    width: 30%;
+    justify-content: center;
+}
+.container-right{
+    height: 100%;
+    width: 70%;
+}
+.container-login{
+    height: 70%;
+    margin-left: 9%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.container-login input{
+    height: 50px;
+	width: 198px;
+	border-radius: 0px 3px 3px 0px;
+	color: #606468;
+	font-family: 'Montserrat';
+	padding: 0 16px;
+	border: none;
+	border-bottom: 2px solid #EEEEEE;
+	border-right: 2px solid #EEEEEE;
+    outline: none;
+    margin-top: 20px;
+}
+.container-login span{
+    width: 50px;
+	height: 50px;
+	color: #606468; 
+	display: block;
+	float: left;
+	line-height: 50px;
+	text-align: center;
+	outline: none;
+	border-bottom: 2px solid #EEEEEE;
+    border-left: 1px solid #EEEEEE;
+    margin-top: 20px;
+}
+.container-login button {
+    width: 235px;
+    height: 41px;
+    border-radius: 3px;
+    color: #eee;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    margin-top: 20px;
+    border: 2px;
+    background-color: var(--pink);
+}
+.container-login button:hover{
+    background-color: #2a7bd1;
+    color: white;
+	transition:all .5s ease-in-out;
+}
+.container-login h1{
+    font-size: 40px;
+    color: #4b4949;
+}
+.container-text{
+    height: 20%;
+    width: 100%;
+    color: #eee;
+    align-items: flex-end !important;
+    font-size: 20px !important;
+}
+.container-images{
+    height: 80%;
+    width: 100%;
+    justify-content: center;
+}
+.container-ipad{
+    height: 90%;
+    width: 70%;
+    background-image: url(../img/ipad.png);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    margin-left: 50px;
+}
+.container-iphone{
+    height: 80%;
+    width: 30%;
+    margin-top: 6%;
+    background-image: url(../img/iphone.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position-x: -20px;
+    
+}
