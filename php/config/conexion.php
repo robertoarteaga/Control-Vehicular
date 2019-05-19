@@ -9,12 +9,6 @@ function conexion(){
     $Password=$Parametros['Password'];
     $DB=$Parametros['DataBase'];
     $Con=mysqli_connect($ServerName,$User,$Password,$DB);
-    
-    if($Con == false){
-        print("Falló la conexion");
-    } else{
-        print("Conexion exitosa");
-    }
     return $Con;
 }
 
