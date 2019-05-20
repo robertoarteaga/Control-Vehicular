@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="css/style-login.css">
-    <title>Document</title>
+    <title>login</title>
 </head>
 <body>
 
@@ -41,7 +41,6 @@
 				</div>
 			</div>
 		</div>
-		<a onclick="M.toast({html: 'I am a toast'})" class="btn">Toast!</a>
     </div>
     
 </body>

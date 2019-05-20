@@ -32,5 +32,9 @@ $(document).ready(function(){
 	$('.menu li ul li a').click(function(){
 		window.location.href = $(this).attr("href");
     });
-    M.Toast.dismissAll();
+	 
+		
+		// MATERIALIZE
+		// DATE
+			M.AutoInit();
 });

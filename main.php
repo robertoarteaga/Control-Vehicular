@@ -9,8 +9,8 @@
 	if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
 		header('location: index.php');
 	}
-	$qUser = "SELECT * FROM usuarios WHERE username = ".$_SESSION['usuario'];
-	$rUser = consulta($qUser);
+	$qUser = "SELECT * FROM usuarios WHERE username = '".$_SESSION['usuario']."';";
+    $rUser = select($qUser);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Inicio</title>
     <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.js"></script>
@@ -37,12 +37,13 @@
                                 <a href="#" class="btn-menu">Menu<i class="icono fa fa-bars"></i></a>
                         
                                 <ul class="menu">
-                                    <li><a href="#">Inicio</a></li>
+                                    <li><a href="main.php">Inicio</a></li>
                                     <li><a href="#">Conductores<span class="icono derecha fontawesome-caret-down"></span></a>
                                         <ul>
-                                            <li><a href="#">Altas</a></li>
-                                            <li><a href="#">Bajas</a></li>
-                                            <li><a href="#">Modificaciones</a></li>
+                                            <li><a href="php/conductores/conductores.php">Altas</a></li>
+                                            <li><a href="php/conductores/eliminarConductores.php">Bajas</a></li>
+                                            <li><a href="php/conductores/modificarConductores.php">Modificaciones</a></li>
+                                            <li><a href="php/conductores/verConductores.php">Ver</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Licencias</a></li>
@@ -66,7 +67,7 @@
                                 </ul>
                             </div>
                 </div>
-                <div class="container-menu-logout flex flex-center">
+                <div class="container-menu-logout flex">
                     <a href="php/logout.php">Cerrar Sesión</a> 
                 </div>
             </div>
@@ -79,7 +80,12 @@
                 </div>
                 <div class="container-nav container-logo flex"></div>
                 <div class="container-nav container-name flex">
-                    <p>Nombre Apellido Apellido</p>
+                    <p><?php
+                    
+                    while($rU = mysqli_fetch_array($rUser)){
+
+                        echo($rU['username']);
+                    }?></p>
                 </div>
             </div>
             <div class="container-content flex">
