@@ -42,7 +42,7 @@
                                     <li><a href="../../main.php">Inicio</a></li>
                                     <li><a href="#">Conductores<span class="icono derecha fontawesome-caret-down"></span></a>
                                         <ul>
-                                            <li><a href="conductores.php">Altas</a></li>
+                                            <li><a href="#">Altas</a></li>
                                             <li><a href="eliminarConductores.php">Bajas</a></li>
                                             <li><a href="modificarConductores.php">Modificaciones</a></li>
                                             <li><a href="verConductores.php">Ver</a></li>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="container-menu-logout flex">
                     <!-- LOGOUT -->
-                    <a href="../logout.php">Cerrar Sesión</a> 
+                    <a href="php/logout.php">Cerrar Sesión</a> 
                 </div>
             </div>
         </header>
@@ -100,35 +100,19 @@
                 <div class="container-card flex">
                     
                     <div class="container-all flex flex-column flex-center center-align">
-                        <h3 class="mtop40">Introduzca el RFC a modificar</h3>
+                        <h3 class="mtop20">Introduzca los siguentes datos</h3>
                         <!-- FORMULARIO -->
-                        <form method="get" style="width:50%;">
-                        <div class="input-field">
-                            <label>RFC</label>
-                                <input type="text" name="RFC" id="" required class="validate">
-                        </div>
-                        <button type="submit" class="btn waves-effect waves-light mtop20 mbot20 light-blue darken-4">Buscar</button>
-                        </form>
-                        <?php
-                            if(isset($_GET['RFC'])){
-                                $conductor = $_GET['RFC'];
-                                $qConductor = "SELECT * FROM conductores WHERE RFC = '".$conductor."';";
-                                $rConductor = select($qConductor);
-                                // die(var_dump($rConductor));
-                                while($rC = mysqli_fetch_array($rConductor)){
-                                
-                        ?>
-                        <form action="actualizar.php" method="POST" class="mtop40" style="width:60%;">
+                        <form action="agregar.php" method="POST" style="width:60%;">
                             <div class="input-field mtop40">
                                 <label>RFC</label>
-                                    <input type="text" name="nrfc" id="" class="validate"  value="<?php echo  $rC['RFC']; ?>" disabled>
+                                    <input type="text" name="rfc" id="" class="validate"  required>
                             </div>
                             <div class="input-field">
                                 <label>Nombre</label>
-                                    <input type="text" name="nombre" id=""  class="validate" value="<?php echo utf8_encode($rC['Nombre']); ?>" required>
+                                    <input type="text" name="nombre" id=""  class="validate" required>
                             </div>
                             <label>Fecha de Nacimiento</label>
-                            <input type="date" name="fechaNacimiento" id="" class="validate" value="<?php echo $rC['FechaNacimiento']; ?>" required>
+                            <input type="date" name="fechaNacimiento" id="" class="validate" required>
                             <!-- FIRMA -->
                                 <div class="file-field input-field">
                                     <p for="">(Opcional)</p>
@@ -142,15 +126,15 @@
                                 </div>
                                 <div class="input-field">
                                         <label>Domicilio</label>
-                                    <input type="text" name="domicilio" id="" class="validate" value="<?php echo  utf8_encode($rC['Domicilio']); ?>" required>
+                                    <input type="text" name="domicilio" id="" class="validate" required>
                                 </div>
                                 <div class="input-field">
                                         <label>Antigüedad</label>
-                                    <input type="text" name="antiguedad" id="" class="validate" value="<?php echo $rC['Antiguedad']; ?>" required>
+                                    <input type="text" name="antiguedad" id="" class="validate" required>
                                 </div>
                                 <div class="input-field">
                                         <label>Teléfono de Emergencia</label>
-                                    <input type="text" name="telEmergencia" id="" class="validate" value="<?php echo  $rC['TelEmergencia']; ?>" required>
+                                    <input type="text" name="telEmergencia" id="" class="validate" required>
                                 </div>
                                 <select name="sexo">
                                     <option value="" disabled selected>Sexo</option>
@@ -159,18 +143,14 @@
                                 </select>
                                 <div class="input-field">
                                         <label>Tipo de Sangre</label>
-                                    <input type="text" name="sangre" id="" class="validate" value="<?php echo $rC['TipoSangre']; ?>" required>
+                                    <input type="text" name="sangre" id="" class="validate" required>
                                 </div>
                                 <div class="input-field">
                                         <label>Restricciones</label>
-                                    <input type="text" name="restriccion" id="" class="validate" value="<?php echo$rC['Restriccion']; ?>" required>
+                                    <input type="text" name="restriccion" id="" class="validate" required>
                                 </div>
-                                <button class="btn waves-effect waves-light mtop20 mbot20 light-blue darken-4">Actualizar</button>
+                                <button class="btn waves-effect waves-light mtop20 mbot20 light-blue darken-4">Aceptar</button>
                         </form>
-                        <?php
-                            }
-                        }
-                        ?>
                     </div>
 
                 </div>

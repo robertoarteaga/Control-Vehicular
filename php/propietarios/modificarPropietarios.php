@@ -42,20 +42,20 @@
                                     <li><a href="../../main.php">Inicio</a></li>
                                     <li><a href="#">Conductores<span class="icono derecha fontawesome-caret-down"></span></a>
                                         <ul>
-                                            <li><a href="conductores.php">Altas</a></li>
-                                            <li><a href="eliminarConductores.php">Bajas</a></li>
-                                            <li><a href="modificarConductores.php">Modificaciones</a></li>
-                                            <li><a href="verConductores.php">Ver</a></li>
+                                            <li><a href="../conductores/conductores.php">Altas</a></li>
+                                            <li><a href="../conductores/eliminarConductores.php">Bajas</a></li>
+                                            <li><a href="../conductores/modificarConductores.php">Modificaciones</a></li>
+                                            <li><a href="../conductores/verConductores.php">Ver</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Licencias</a></li>
                                     <li><a href="#">Multas</a></li>
                                     <li><a href="#">Propietarios<span class="icono derecha fontawesome-caret-down"></span></a>
                                         <ul>
-                                            <li><a href="../propietarios/propietarios.php">Altas</a></li>
-                                            <li><a href="../propietarios/eliminarPropietarios.php">Bajas</a></li>
-                                            <li><a href="../propietarios/modificarPropietarios.php">Modificaciones</a></li>
-                                            <li><a href="../propietarios/verPropietarios.php">Ver</a></li>
+                                            <li><a href="propietarios.php">Altas</a></li>
+                                            <li><a href="eliminarPropietarios.php">Bajas</a></li>
+                                            <li><a href="modificarPropietarios.php">Modificaciones</a></li>
+                                            <li><a href="verPropietarios.php">Ver</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Reportes</a></li>
@@ -112,7 +112,7 @@
                         <?php
                             if(isset($_GET['RFC'])){
                                 $conductor = $_GET['RFC'];
-                                $qConductor = "SELECT * FROM conductores WHERE RFC = '".$conductor."';";
+                                $qConductor = "SELECT * FROM propietarios WHERE RFC = '".$conductor."';";
                                 $rConductor = select($qConductor);
                                 // die(var_dump($rConductor));
                                 while($rC = mysqli_fetch_array($rConductor)){
@@ -121,49 +121,23 @@
                         <form action="actualizar.php" method="POST" class="mtop40" style="width:60%;">
                             <div class="input-field mtop40">
                                 <label>RFC</label>
-                                    <input type="text" name="nrfc" id="" class="validate"  value="<?php echo  $rC['RFC']; ?>" disabled>
+                                    <input type="text" name="nrfc" id="" class="validate"  value="<?php echo  $rC['RFC']; ?>">
                             </div>
                             <div class="input-field">
                                 <label>Nombre</label>
                                     <input type="text" name="nombre" id=""  class="validate" value="<?php echo utf8_encode($rC['Nombre']); ?>" required>
                             </div>
-                            <label>Fecha de Nacimiento</label>
-                            <input type="date" name="fechaNacimiento" id="" class="validate" value="<?php echo $rC['FechaNacimiento']; ?>" required>
-                            <!-- FIRMA -->
-                                <div class="file-field input-field">
-                                    <p for="">(Opcional)</p>
-                                    <div class="btn light-blue darken-4">
-                                        <span>Firma</span>
-                                        <input type="file" multiple name="firma">
-                                    </div>
-                                    <div class="file-path-wrapper">
-                                        <input class="file-path validate" name="firma" type="text" placeholder="Sube la firma.">
-                                    </div>
-                                </div>
                                 <div class="input-field">
                                         <label>Domicilio</label>
-                                    <input type="text" name="domicilio" id="" class="validate" value="<?php echo  utf8_encode($rC['Domicilio']); ?>" required>
+                                    <input type="text" name="domicilio" id="" class="validate" value="<?php echo  utf8_encode($rC['Direccion']); ?>" required>
                                 </div>
                                 <div class="input-field">
-                                        <label>Antigüedad</label>
-                                    <input type="text" name="antiguedad" id="" class="validate" value="<?php echo $rC['Antiguedad']; ?>" required>
+                                        <label>Teléfono</label>
+                                    <input type="text" name="telefono" id="" class="validate" value="<?php echo  $rC['Telefono']; ?>" required>
                                 </div>
                                 <div class="input-field">
-                                        <label>Teléfono de Emergencia</label>
-                                    <input type="text" name="telEmergencia" id="" class="validate" value="<?php echo  $rC['TelEmergencia']; ?>" required>
-                                </div>
-                                <select name="sexo">
-                                    <option value="" disabled selected>Sexo</option>
-                                    <option value="F">Femenino</option>
-                                    <option value="M">Masculino</option>
-                                </select>
-                                <div class="input-field">
-                                        <label>Tipo de Sangre</label>
-                                    <input type="text" name="sangre" id="" class="validate" value="<?php echo $rC['TipoSangre']; ?>" required>
-                                </div>
-                                <div class="input-field">
-                                        <label>Restricciones</label>
-                                    <input type="text" name="restriccion" id="" class="validate" value="<?php echo$rC['Restriccion']; ?>" required>
+                                        <label>Correo</label>
+                                    <input type="email" name="correo" id="" class="validate" value="<?php echo$rC['Correo']; ?>" required>
                                 </div>
                                 <button class="btn waves-effect waves-light mtop20 mbot20 light-blue darken-4">Actualizar</button>
                         </form>

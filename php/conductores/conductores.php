@@ -52,19 +52,19 @@
                                     <li><a href="#">Multas</a></li>
                                     <li><a href="#">Propietarios<span class="icono derecha fontawesome-caret-down"></span></a>
                                         <ul>
-                                            <li><a href="#">Altas</a></li>
-                                            <li><a href="#">Bajas</a></li>
-                                            <li><a href="#">Modificaciones</a></li>
-                                            <li><a href="#">Ver</a></li>
+                                            <li><a href="../propietarios/propietarios.php">Altas</a></li>
+                                            <li><a href="../propietarios/eliminarPropietarios.php">Bajas</a></li>
+                                            <li><a href="../propietarios/modificarPropietarios.php">Modificaciones</a></li>
+                                            <li><a href="../propietarios/verPropietarios.php">Ver</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Reportes</a></li>
                                     <li><a href="#">Vehículos<span class="icono derecha fontawesome-caret-down"></span></a>
                                         <ul>
-                                            <li><a href="#">Altas</a></li>
-                                            <li><a href="#">Bajas</a></li>
-                                            <li><a href="#">Modificaciones</a></li>
-                                            <li><a href="#">Ver</a></li>
+                                            <li><a href="../vehiculos/vehiculos.php">Altas</a></li>
+                                            <li><a href="../vehiculos/eliminarVehiculos.php">Bajas</a></li>
+                                            <li><a href="../vehiculos/modificarVehiculos.php">Modificaciones</a></li>
+                                            <li><a href="../vehiculos/verVehiculos.php">Ver</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Verificaciones</a></li>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="container-menu-logout flex">
                     <!-- LOGOUT -->
-                    <a href="php/logout.php">Cerrar Sesión</a> 
+                    <a href="../logout.php">Cerrar Sesión</a> 
                 </div>
             </div>
         </header>

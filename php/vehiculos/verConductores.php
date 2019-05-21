@@ -64,10 +64,10 @@
                     ></span
                   ></a>
                   <ul>
-                    <li><a href="../propietarios/propietarios.php">Altas</a></li>
-                    <li><a href="../propietarios/eliminarPropietarios.php">Bajas</a></li>
-                    <li><a href="../propietarios/modificarPropietarios.php">Modificaciones</a></li>
-                    <li><a href="../propietarios/verPropietarios.php">Ver</a></li>
+                    <li><a href="../vehiculos/vehiculos.php">Altas</a></li>
+                    <li><a href="../vehiculos/eliminarVehiculos.php">Bajas</a></li>
+                    <li><a href="../vehiculos/modificarVehiculos.php">Modificaciones</a></li>
+                    <li><a href="../vehiculos/verVehiculos.php">Ver</a></li>
                   </ul>
                 </li>
                 <li><a href="#">Reportes</a></li>
@@ -78,10 +78,10 @@
                     ></span
                   ></a>
                   <ul>
-                    <li><a href="../vehiculos/vehiculos.php">Altas</a></li>
-                    <li><a href="../vehiculos/eliminarVehiculos.php">Bajas</a></li>
-                    <li><a href="../vehiculos/modificarVehiculos.php">Modificaciones</a></li>
-                    <li><a href="../vehiculos/verVehiculos.php">Ver</a></li>
+                    <li><a href="#">Altas</a></li>
+                    <li><a href="#">Bajas</a></li>
+                    <li><a href="#">Modificaciones</a></li>
+                    <li><a href="#">Ver</a></li>
                   </ul>
                 </li>
                 <li><a href="#">Verificaciones</a></li>

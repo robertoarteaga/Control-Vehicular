@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include('php/config/conexion.php');
+    include('../config/conexion.php');
     $session=($_SESSION['usuario']);
     
     if(!isset($_SESSION['usuario'])){
@@ -19,10 +19,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inicio</title>
-    <link rel="stylesheet" href="css/materialize.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery.js"></script>
-    <script src="js/functions.js"></script>
+    <link rel="stylesheet" href="../../css/materialize.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/functions.js"></script>
+    <script src="../../js/materialize.min.js"></script>
+    
 </head>
 <body>
     <div class="container-absolute flex">
@@ -37,32 +39,32 @@
                                 <a href="#" class="btn-menu">Menu<i class="icono fa fa-bars"></i></a>
                         
                                 <ul class="menu">
-                                    <li><a href="main.php">Inicio</a></li>
+                                    <li><a href="../../main.php">Inicio</a></li>
                                     <li><a href="#">Conductores<span class="icono derecha fontawesome-caret-down"></span></a>
                                         <ul>
-                                            <li><a href="php/conductores/conductores.php">Altas</a></li>
-                                            <li><a href="php/conductores/eliminarConductores.php">Bajas</a></li>
-                                            <li><a href="php/conductores/modificarConductores.php">Modificaciones</a></li>
-                                            <li><a href="php/conductores/verConductores.php">Ver</a></li>
+                                            <li><a href="conductores.php">Altas</a></li>
+                                            <li><a href="eliminarConductores.php">Bajas</a></li>
+                                            <li><a href="modificarConductores.php">Modificaciones</a></li>
+                                            <li><a href="verConductores.php">Ver</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Licencias</a></li>
                                     <li><a href="#">Multas</a></li>
                                     <li><a href="#">Propietarios<span class="icono derecha fontawesome-caret-down"></span></a>
                                         <ul>
-                                            <li><a href="php/propietarios/propietarios.php">Altas</a></li>
-                                            <li><a href="php/propietarios/eliminarPropietarios.php">Bajas</a></li>
-                                            <li><a href="php/propietarios/modificarPropietarios.php">Modificaciones</a></li>
-                                            <li><a href="php/propietarios/verPropietarios.php">Ver</a></li>
+                                            <li><a href="../propietarios/propietarios.php">Altas</a></li>
+                                            <li><a href="../propietarios/eliminarPropietarios.php">Bajas</a></li>
+                                            <li><a href="../propietarios/modificarPropietarios.php">Modificaciones</a></li>
+                                            <li><a href="../propietarios/verPropietarios.php">Ver</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Reportes</a></li>
                                     <li><a href="#">Vehículos<span class="icono derecha fontawesome-caret-down"></span></a>
                                         <ul>
-                                            <li><a href="php/vehiculos/vehiculos.php">Altas</a></li>
-                                            <li><a href="php/vehiculos/eliminarVehiculos.php">Bajas</a></li>
-                                            <li><a href="php/vehiculos/modificarVehiculos.php">Modificaciones</a></li>
-                                            <li><a href="php/vehiculos/verVehiculos.php">Ver</a></li>
+                                            <li><a href="../vehiculos/vehiculos.php">Altas</a></li>
+                                            <li><a href="../vehiculos/eliminarVehiculos.php">Bajas</a></li>
+                                            <li><a href="../vehiculos/modificarVehiculos.php">Modificaciones</a></li>
+                                            <li><a href="../vehiculos/verVehiculos.php">Ver</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Verificaciones</a></li>
@@ -92,7 +94,16 @@
             </div>
             <div class="container-content flex">
                 <div class="container-card flex ">
-                    <input type="text">
+                    <div class="container-all flex flex-column flex-center center-align">
+                        <h3 class="mtop40">Ingrese el RFC del Conductor a Eliminar</h3>
+                        <form action="eliminar.php" method="GET" style="width:50%;">
+                            <div class="input-field mtop40">
+                                <label>RFC</label>
+                                <input type="text" name="rfc" id="" class="validate" required>
+                            </div>
+                            <button class="btn waves-effect waves-light mtop20 mbot20 light-blue darken-4" type="submit">Eliminar</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

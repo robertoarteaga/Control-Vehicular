@@ -4,10 +4,10 @@
     $session=($_SESSION['usuario']);
     
     if(!isset($_SESSION['usuario'])){
-		header('location: index.php');
+		header('location: ../../index.php');
     }
 	if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
-		header('location: index.php');
+		header('location: ../../index.php');
 	}
 	$qUser = "SELECT * FROM usuarios WHERE username = '".$_SESSION['usuario']."';";
     $rUser = select($qUser);
@@ -49,10 +49,10 @@
                     ></span
                   ></a>
                   <ul>
-                    <li><a href="conductores.php">Altas</a></li>
-                    <li><a href="eliminarConductores.php">Bajas</a></li>
-                    <li><a href="modificarConductores.php">Modificaciones</a></li>
-                    <li><a href="#">Ver</a></li>
+                    <li><a href="../conductores/conductores.php">Altas</a></li>
+                    <li><a href="../conductores/eliminarConductores.php">Bajas</a></li>
+                    <li><a href="../conductores/modificarConductores.php">Modificaciones</a></li>
+                    <li><a href="../conductores/verConductores.php">Ver</a></li>
                   </ul>
                 </li>
                 <li><a href="#">Licencias</a></li>
@@ -64,10 +64,10 @@
                     ></span
                   ></a>
                   <ul>
-                    <li><a href="../propietarios/propietarios.php">Altas</a></li>
-                    <li><a href="../propietarios/eliminarPropietarios.php">Bajas</a></li>
-                    <li><a href="../propietarios/modificarPropietarios.php">Modificaciones</a></li>
-                    <li><a href="../propietarios/verPropietarios.php">Ver</a></li>
+                    <li><a href="propietarios.php">Altas</a></li>
+                    <li><a href="eliminarPropietarios.php">Bajas</a></li>
+                    <li><a href="modificarPropietarios.php">Modificaciones</a></li>
+                    <li><a href="verPropietarios.php">Ver</a></li>
                   </ul>
                 </li>
                 <li><a href="#">Reportes</a></li>
@@ -118,11 +118,11 @@
           <!-- CONTAINER CARD -->
           <div class="container-card flex">
             <div class="container-title center-align">
-              <h3 class="mtop20">Datos del conductor</h3>
+              <h3 class="mtop20">Datos del Propietario</h3>
             </div>
             <div class="container-all flex flex-column flex-center center-align">
               <?php
-                            $qConductores = "SELECT * FROM conductores WHERE Estatus = 1";
+                            $qConductores = "SELECT * FROM propietarios WHERE Estatus = 1";
                             $rCon = select($qConductores);
                         ?>
               <table class="striped centered center-align responsive-table mtop40">
@@ -130,11 +130,9 @@
                         <tr>
                             <th>RFC</th>
                             <th>Nombre</th>
-                            <th>Fecha de Nacimiento</th> 
                             <th>Domicilio</th>
-                            <th>Antigüedad</th> 
-                            <th>Teléfono</th>
-                            <th>Sexo</th>
+                            <th>Teléfono</th> 
+                            <th>Correo</th>
                             <th>Acciones</th> 
                         </tr>
                     </thead>
@@ -145,13 +143,11 @@
                             <tr>
                                 <td><?php echo utf8_encode($rC['RFC']); ?></td>
                                 <td><?php echo utf8_encode($rC['Nombre']); ?></td>
-                                <td><?php echo utf8_encode($rC['FechaNacimiento']); ?></td>
-                                <td><?php echo utf8_encode($rC['Domicilio']); ?></td>
-                                <td><?php echo utf8_encode($rC['Antiguedad']); ?></td>
-                                <td><?php echo utf8_encode($rC['TelEmergencia']); ?></td>
-                                <td><?php echo utf8_encode($rC['Sexo']); ?></td>
+                                <td><?php echo utf8_encode($rC['Direccion']); ?></td>
+                                <td><?php echo utf8_encode($rC['Telefono']); ?></td>
+                                <td><?php echo utf8_encode($rC['Correo']); ?></td>
                                 <td>
-                                    <a class="btn light-blue darken-4" href="modificarConductores.php?RFC=<?php echo $rC['RFC']; ?>">
+                                    <a class="btn light-blue darken-4" href="modificarPropietarios.php?RFC=<?php echo $rC['RFC']; ?>">
                                         Editar
                                     </a>
                                 </td>
