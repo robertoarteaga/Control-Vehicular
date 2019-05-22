@@ -8,34 +8,39 @@ if(!isset($_SESSION['usuario'])){
 }
 if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
     header('location: index.php');
-}
-
-
-                            $RFC = $_POST['rfc'];
-                            $Nombre = $_POST['nombre'];
-                            $FechaNacimiento = $_POST['fechaNacimiento'];
-                            $Firma = $_POST['firma'];
-                            $Domicilio = $_POST['domicilio'];
-                            $Antiguedad = $_POST['antiguedad'];
-                            $Sexo = $_POST['sexo'];
-                            $TipoSangre = $_POST['sangre'];
-                            $Resticcion = $_POST['restriccion'];
-                            $TelefonoEmergencia = $_POST['telEmergencia'];
-                            
-                            $qInsert= ('INSERT INTO conductores VALUES ("'.$RFC.'","'.$Nombre.'","'.$FechaNacimiento.'","'.$Firma.'","'.$Domicilio.'","'.$Antiguedad.'","'.$Sexo.'"
-                                ,"'.$TipoSangre.'","'.$Resticcion.'","'.$TelefonoEmergencia.'");');
-                                // die(var_dump($qInsert));
-                            $res=consulta($qInsert);
-                            $status = mysqli_affected_rows($res);
-                            // die(var_dump($status));
-                            if($status == 1){
-                                echo'<script type="text/javascript">
-                                        alert("Conductor Agregado");
-                                        window.location.href="../../main.php";
-                                        </script>';
-                            }else{
-                                echo'<script type="text/javascript">
-                                        alert("Error en los datos");
-                                        </script>';
-                            }
-                        ?>
+}                        
+    $Propietario = $_POST['Propietario'];
+    $NIV = $_POST['NIV'];
+    $Placa = $_POST['Placa'];
+    $Tipo = $_POST['Tipo'];
+    $Color = $_POST['Color'];
+    $Uso = $_POST['Uso'];
+    $Puerta = $_POST['Puertas'];
+    $Marca = $_POST['Marca'];
+    $Motor = $_POST['Motor'];
+    $Serie = $_POST['Serie'];
+    $Modelo = $_POST['Modelo'];
+    $Combustible = $_POST['Combustible'];
+    $Year = $_POST['Year'];
+    $Cilindraje = $_POST['Cilindraje'];
+    $Transmision = $_POST['Transmision'];
+    $Linea = $_POST['Linea'];
+    $Origen = $_POST['Origen'];
+    
+    $qInsert= ('INSERT INTO vehiculos VALUES ("","'.$Propietario.'","'.$NIV.'","'.$Placa.'","'.$Tipo.'","'.$Color.'","'.$Uso.'","'.$Puerta.'"
+        ,"'.$Marca.'","'.$Motor.'","'.$Serie.'","'.$Modelo.'","'.$Combustible.'","'.$Year.'","'.$Cilindraje.'","'.$Transmision.'","'.$Linea.'","'.$Origen.'");');
+        // die(var_dump($qInsert));
+    $res=consulta($qInsert);
+    $status = mysqli_affected_rows($res);
+    // die(var_dump($status));
+    if($status == 1){
+        echo'<script type="text/javascript">
+                alert("Vehículo Agregado");
+                window.location.href="../../main.php";
+                </script>';
+    }else{
+        echo'<script type="text/javascript">
+                alert("Error en los datos");
+                </script>';
+    }
+?>

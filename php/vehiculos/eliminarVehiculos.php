@@ -95,11 +95,11 @@
             <div class="container-content flex">
                 <div class="container-card flex ">
                     <div class="container-all flex flex-column flex-center center-align">
-                        <h3 class="mtop40">Ingrese el RFC del Conductor a Eliminar</h3>
+                        <h3 class="mtop40">Ingrese el NIV del Vehículo a Eliminar</h3>
                         <form action="eliminar.php" method="GET" style="width:50%;">
                             <div class="input-field mtop40">
-                                <label>RFC</label>
-                                <input type="text" name="rfc" id="" class="validate" required>
+                                <label>NIV</label>
+                                <input type="text" name="NIV" id="" class="validate" required>
                             </div>
                             <button class="btn waves-effect waves-light mtop20 mbot20 light-blue darken-4" type="submit">Eliminar</button>
                         </form>

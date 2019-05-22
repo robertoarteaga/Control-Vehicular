@@ -1,20 +1,31 @@
 <?php
 include('../config/conexion.php');
-if(!isset($_POST['nrfc'])){
+die(var_dump($_POST['NIV']));
+die();
+if(!isset($_POST['NIV'])){
+    die(var_dump($_POST['NIV']));
     header('location: verConductores.php');
 }
-    $RFC = $_POST['nrfc'];
-    $Nombre = $_POST['nombre'];
-    $FechaNacimiento = $_POST['fechaNacimiento'];
-    $Firma = $_POST['firma'];
-    $Domicilio = $_POST['domicilio'];
-    $Antiguedad = $_POST['antiguedad'];
-    $Sexo = $_POST['sexo'];
-    $TipoSangre = $_POST['sangre'];
-    $Resticcion = $_POST['restriccion'];
-    $TelefonoEmergencia = $_POST['telEmergencia'];
+    $Propietario = $_POST['Propietario'];
+    $NIV = $_POST['NIV'];
+    $Placa = $_POST['Placa'];
+    $Tipo = $_POST['Tipo'];
+    $Color = $_POST['Color'];
+    $Uso = $_POST['Uso'];
+    $Puerta = $_POST['Puertas'];
+    $Marca = $_POST['Marca'];
+    $Motor = $_POST['Motor'];
+    $Serie = $_POST['Serie'];
+    $Modelo = $_POST['Modelo'];
+    $Combustible = $_POST['Combustible'];
+    $Year = $_POST['Year'];
+    $Cilindraje = $_POST['Cilindraje'];
+    $Transmision = $_POST['Transmision'];
+    $Linea = $_POST['Linea'];
+    $Origen = $_POST['Origen'];
 
-    $qInsert= ('UPDATE conductores SET RFC = "'.$RFC.'", Nombre = "'.$Nombre.'", FechaNacimiento = "'.$FechaNacimiento.'", Firma = "'.$Firma.'", Domicilio = "'.$Domicilio.'", Antiguedad = "'.$Antiguedad.'", Sexo = "'.$Sexo.'", TipoSangre = "'.$TipoSangre.'", Restriccion = "'.$Resticcion.'", TelEmergencia = "'.$TelefonoEmergencia.'" WHERE RFC = "'.$RFC.'";');
+    $qInsert= ('UPDATE vehiculos SET idVehiculo = "", Propietario = "'.$Propietario.'", Placa = "'.$Placa.'","'.$Tipo.'","'.$Color.'","'.$Uso.'","'.$Puerta.'"
+    ,"'.$Marca.'","'.$Motor.'","'.$Serie.'","'.$Modelo.'","'.$Combustible.'","'.$Year.'","'.$Cilindraje.'","'.$Transmision.'","'.$Linea.'","'.$Origen.'";');
     // die(var_dump($qInsert));
                                 // die(var_dump($qInsert));
     $res=consulta($qInsert);
