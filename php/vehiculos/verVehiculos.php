@@ -175,7 +175,7 @@
                     <td>
                       <a
                         class="btn light-blue darken-4"
-                        href="modificarConductores.php?id=<?php echo $rC['idVehiculo']; ?>"
+                        href="modificarVehiculos.php?NIV=<?php echo $rC['NIV']; ?>"
                       >
                         Editar
                       </a>
@@ -183,7 +183,7 @@
                     <td>
                       <a
                         class="btn red darken-4"
-                        href="eliminar.php?id=<?php echo $rC['idVehiculo']; ?>"
+                        href="eliminar.php?NIV=<?php echo $rC['NIV']; ?>"
                       >
                         Eliminar
                       </a>

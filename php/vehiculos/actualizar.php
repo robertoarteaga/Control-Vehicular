@@ -1,11 +1,11 @@
 <?php
 include('../config/conexion.php');
-die(var_dump($_POST['NIV']));
-die();
+
 if(!isset($_POST['NIV'])){
-    die(var_dump($_POST['NIV']));
+    // die(var_dump($_POST['NIV']));
     header('location: verConductores.php');
 }
+    $id = $_POST['id'];
     $Propietario = $_POST['Propietario'];
     $NIV = $_POST['NIV'];
     $Placa = $_POST['Placa'];
@@ -24,12 +24,12 @@ if(!isset($_POST['NIV'])){
     $Linea = $_POST['Linea'];
     $Origen = $_POST['Origen'];
 
-    $qInsert= ('UPDATE vehiculos SET idVehiculo = "", Propietario = "'.$Propietario.'", Placa = "'.$Placa.'","'.$Tipo.'","'.$Color.'","'.$Uso.'","'.$Puerta.'"
-    ,"'.$Marca.'","'.$Motor.'","'.$Serie.'","'.$Modelo.'","'.$Combustible.'","'.$Year.'","'.$Cilindraje.'","'.$Transmision.'","'.$Linea.'","'.$Origen.'";');
+    $qInsert= ('UPDATE vehiculos SET Propietario = "'.$Propietario.'", Placa = "'.$Placa.'", Tipo = "'.$Tipo.'", Color = "'.$Color.'", Uso = "'.$Uso.'", numPuerta = "'.$Puerta.'"
+    , Marca = "'.$Marca.'",numMotor = "'.$Motor.'",numSerie = "'.$Serie.'",Modelo = "'.$Modelo.'",Combustible = "'.$Combustible.'",Year = "'.$Year.'",Cilindraje = "'.$Cilindraje.'", Transmision = "'.$Transmision.'", Linea = "'.$Linea.'", Origen = "'.$Origen.'" WHERE idVehiculo ="'.$id.'";');
     // die(var_dump($qInsert));
-                                // die(var_dump($qInsert));
+    
     $res=consulta($qInsert);
     $status = mysqli_affected_rows($res);
-    header('location: verConductores.php');
+    header('location: verVehiculos.php');
 
 ?>

@@ -116,10 +116,17 @@
                                 
                         ?>
                         <form action="actualizar.php" method="POST" style="width:50%;">
-                        <input type="text" name="NIV" value="<?php echo($rV['NIV']) ?>">
+                        <div class="input-field mtop40">
+                        <label for="">ID</label>
+                                <input type="text" name="id" id="" class="validate" value="<?php echo($rV['idVehiculo'])?>" required>
+                        </div> 
+                        <div class="input-field mtop40">
+                        <label for="">NIV</label>
+                                <input type="text" name="NIV" id="" class="validate" value="<?php echo($rV['NIV'])?>" required>
+                        </div> 
                         <div class="input-field mtop40">
                                 <select name="Propietario">
-                                    <option value="" disabled selected><?php echo($rV['Propietario']) ?></option>
+                                    <option value="<?php echo($rV['Propietario'])?>" selected><?php echo($rV['Propietario']) ?></option>
                                     <?php 
                                         $qPropietarios = "SELECT RFC FROM propietarios;";
                                         $rPropietarios = select($qPropietarios);
@@ -130,7 +137,7 @@
                                     <?php } ?>
                                 </select>
                             <label>Propietario</label>    
-                        </div>                            
+                        </div>                           
                             <div class="input-field mtop40">
                                 <label for="">Placa</label>
                                 <input type="text" name="Placa" id="" class="validate" value="<?php echo($rV['Placa'])?>" required>
