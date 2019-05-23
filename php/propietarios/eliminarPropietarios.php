@@ -58,7 +58,7 @@
                                             <li><a href="verPropietarios.php">Ver</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Reportes</a></li>
+                                    <li><a href="../reportes/reportes.php">Reportes</a></li>
                                     <li><a href="#">Vehículos<span class="icono derecha fontawesome-caret-down"></span></a>
                                         <ul>
                                             <li><a href="../vehiculos/vehiculos.php">Altas</a></li>

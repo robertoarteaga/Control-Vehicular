@@ -58,7 +58,7 @@
                                             <li><a href="../propietarios/verPropietarios.php">Ver</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Reportes</a></li>
+                                    <li><a href="../reportes/reportes.php">Reportes</a></li>
                                     <li><a href="#">Vehículos<span class="icono derecha fontawesome-caret-down"></span></a>
                                         <ul>
                                             <li><a href="../vehiculos/vehiculos.php">Altas</a></li>
@@ -82,7 +82,7 @@
             <div class="container-header flex">
                 <div class="container-nav container-info flex">
                     <!-- UBICACIÓN DEL USUARIO -->
-                    <p>Conductores</p>
+                    <p>Vehículos</p>
                 </div>
                 <div class="container-nav container-logo flex"></div>
                 <div class="container-nav container-name flex">

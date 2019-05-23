@@ -70,7 +70,7 @@
                     <li><a href="../propietarios/verPropietarios.php">Ver</a></li>
                   </ul>
                 </li>
-                <li><a href="#">Reportes</a></li>
+                <li><a href="../reportes/reportes.php">Reportes</a></li>
                 <li>
                   <a href="#"
                     >Vehículos<span

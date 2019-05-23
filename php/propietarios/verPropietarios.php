@@ -70,7 +70,7 @@
                     <li><a href="verPropietarios.php">Ver</a></li>
                   </ul>
                 </li>
-                <li><a href="#">Reportes</a></li>
+                <li><a href="../reportes/reportes.php">Reportes</a></li>
                 <li>
                   <a href="#"
                     >Vehículos<span
@@ -99,7 +99,7 @@
         <div class="container-header flex">
           <div class="container-nav container-info flex">
             <!-- UBICACIÓN DEL USUARIO -->
-            <p>Conductores</p>
+            <p>Propietarios</p>
           </div>
           <div class="container-nav container-logo flex"></div>
           <div class="container-nav container-name flex">

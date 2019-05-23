@@ -42,10 +42,10 @@
                                     <li><a href="../../main.php">Inicio</a></li>
                                     <li><a href="#">Conductores<span class="icono derecha fontawesome-caret-down"></span></a>
                                         <ul>
-                                            <li><a href="conductores.php">Altas</a></li>
-                                            <li><a href="eliminarConductores.php">Bajas</a></li>
-                                            <li><a href="modificarConductores.php">Modificaciones</a></li>
-                                            <li><a href="verConductores.php">Ver</a></li>
+                                            <li><a href="../conductores/conductores.php">Altas</a></li>
+                                            <li><a href="../conductores/eliminarConductores.php">Bajas</a></li>
+                                            <li><a href="../conductores/modificarConductores.php">Modificaciones</a></li>
+                                            <li><a href="../conductores/verConductores.php">Ver</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Licencias</a></li>
@@ -58,7 +58,7 @@
                                             <li><a href="../propietarios/verPropietarios.php">Ver</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Reportes</a></li>
+                                    <li><a href="../reportes/reportes.php">Reportes</a></li>
                                     <li><a href="#">Vehículos<span class="icono derecha fontawesome-caret-down"></span></a>
                                         <ul>
                                             <li><a href="../vehiculos/vehiculos.php">Altas</a></li>
@@ -80,7 +80,7 @@
         <div class="container-right flex flex-column">
             <div class="container-header flex">
                 <div class="container-nav container-info flex">
-                    <p>Inicio</p>
+                    <p>Vehículos</p>
                 </div>
                 <div class="container-nav container-logo flex"></div>
                 <div class="container-nav container-name flex">
