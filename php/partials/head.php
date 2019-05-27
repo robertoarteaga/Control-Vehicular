@@ -27,6 +27,7 @@
             <link rel="stylesheet" href="css/style.css">
             <script src="js/jquery.js"></script>
             <script src="js/functions.js"></script>
+            <script src="js/materialize.min.js"></script>
     <?php
         } else {
     ?>
@@ -34,6 +35,7 @@
             <link rel="stylesheet" href="./../../css/style.css">
             <script src="./../../js/jquery.js"></script>
             <script src="./../../js/functions.js"></script>
+            <script src="./../../js/materialize.min.js"></script>
     <?php            
         }
     ?>
