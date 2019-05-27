@@ -220,3 +220,31 @@ h3{
 i{
     font-family: 'FontAwesome'; 
 }
+.card-reporte{
+    height: 19%;
+    width: calc(100%/4);
+    margin-left: 1px;
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    border-color: var(--pink);
+    
+}
+#tlink{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+h4{
+    color: #424242;
+    font-weight: bold;
+}
+.card-robos{
+    background-color: var(--pink);
+}
+.space-ar{
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
