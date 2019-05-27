@@ -19,7 +19,20 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
     $TipoSangre = $_POST['sangre'];
     $Resticcion = $_POST['restriccion'];
     $TelefonoEmergencia = $_POST['telEmergencia'];
-    
+
+    $dom = new SimpleXMLElement( '<?xml version = "1.0"
+    encoding = "utf-8" ?> <conductores></conductores>' );
+    $ing = $dom->addChild('Conductores');
+    $ing -> addChild('RFC:',$RFC);
+    $ing -> addChild('Domicilio:',$Domicilio);
+    $ing -> addChild('Sexo:',$Sexo);
+    $ing -> addChild('Tipo de Sangre:',$TipoSangre);
+    $xmlData = $dom->saveXML();
+    $dom->formatOutput = true;
+    $d=$Conductor.date('is');
+    $strings_xml = $dom->saveXML("C:/xampp/htdocs/Control-Vehicular/temp/$d.xml");
+
+
     $qInsert= ('INSERT INTO conductores VALUES ("'.$RFC.'","'.$Nombre.'","'.$FechaNacimiento.'","'.$Firma.'","'.$Domicilio.'","'.$Antiguedad.'","'.$Sexo.'"
         ,"'.$TipoSangre.'","'.$Resticcion.'","'.$TelefonoEmergencia.'");');
         // die(var_dump($qInsert));
