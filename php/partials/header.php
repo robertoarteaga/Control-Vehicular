@@ -7,6 +7,9 @@
         <div class="container-menu-links flex flex-column">
                 <div class="contenedor-menu">
                         <a href="#" class="btn-menu">Menu<i class="icono fa fa-bars"></i></a>                
+                        <?php
+                        print_r($_SERVER['REQUEST_URI']);
+                        ?>
                         <ul class="menu">
                             <li><a href="<?php echo count(explode('/', $_SERVER['REQUEST_URI'])) == 3 ? './main.php' : '/'.explode('/', $_SERVER['REQUEST_URI'])[1].'/main.php'; ?>">Inicio</a></li>
                             <li><a href="#">Conductores<span class="icono derecha fontawesome-caret-down"></span></a>
