@@ -29,7 +29,7 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
     $ing -> addChild('Tipo de Sangre:',$TipoSangre);
     $xmlData = $dom->saveXML();
     $dom->formatOutput = true;
-    $d=$Conductor.date('is');
+    $d=$RFC.date('is');
     $strings_xml = $dom->saveXML("C:/xampp/htdocs/Control-Vehicular/temp/$d.xml");
 
 
