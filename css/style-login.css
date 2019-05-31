@@ -111,7 +111,7 @@
 .container-ipad{
     height: 90%;
     width: 70%;
-    background-image: url(../img/ipad.png);
+    /* background-image: url(../img/ipad.png); */
     background-size: 90%;
     background-repeat: no-repeat;
     margin-left: 50px;
@@ -120,7 +120,7 @@
     height: 80%;
     width: 30%;
     margin-top: 6%;
-    background-image: url(../img/iphone.png);
+    /* background-image: url(../img/iphone.png); */
     background-size: 70%;
     background-repeat: no-repeat;
     background-position-x: -20px;

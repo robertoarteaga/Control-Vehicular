@@ -30,7 +30,7 @@
 		<div class="container-right flex flex-column flex-center">
 			<div class="container-text flex flex-center">
 				<div class="container-title flex flex-center">
-					<h1>¡Disponible en dispositivos móviles!</h1>
+					<!-- <h1>¡Disponible en dispositivos móviles!</h1> -->
 				</div>
 			</div>
 			<div class="container-images flex">

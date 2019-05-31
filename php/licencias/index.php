@@ -45,6 +45,15 @@
                                     <option value="No">No</option>
                                 </select>                            
                             </div>
+                            <div class="file-field input-field">
+                                    <div class="btn light-blue darken-4">
+                                        <span>Subir</span>
+                                        <input type="file" multiple name="firma">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" name="firma" type="text" placeholder="Foto del conductor.">
+                                    </div>
+                                </div>
                             <button class="btn waves-effect waves-light mtop20 mbot20 light-blue darken-4">Aceptar</button>
                         </form>
                     </div>

@@ -8,7 +8,6 @@
                 <div class="contenedor-menu">
                         <a href="#" class="btn-menu">Menu<i class="icono fa fa-bars"></i></a>                
                         <?php
-                        print_r($_SERVER['REQUEST_URI']);
                         ?>
                         <ul class="menu">
                             <li><a href="<?php echo count(explode('/', $_SERVER['REQUEST_URI'])) == 3 ? './main.php' : '/'.explode('/', $_SERVER['REQUEST_URI'])[1].'/main.php'; ?>">Inicio</a></li>
@@ -30,7 +29,7 @@
                                     <li><a href="<?php echo count(explode('/', $_SERVER['REQUEST_URI'])) == 3 ? './php/propietarios/verPropietarios.php' : '/'.explode('/', $_SERVER['REQUEST_URI'])[1].'/php/propietarios/verPropietarios.php'; ?>">Ver</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<?php echo count(explode('/', $_SERVER['REQUEST_URI'])) == 3 ? './php/vehiculos/vehiculos.php' : '/'.explode('/', $_SERVER['REQUEST_URI'])[1].'/php/reportes/reportes.php'; ?>">Reportes</a></li>
+                            <li><a href="<?php echo count(explode('/', $_SERVER['REQUEST_URI'])) == 3 ? './php/reportes/reportes.php' : '/'.explode('/', $_SERVER['REQUEST_URI'])[1].'/php/reportes/reportes.php'; ?>">Reportes</a></li>
                             <li><a href="#">Vehículos<span class="icono derecha fontawesome-caret-down"></span></a>
                                 <ul>
                                     <li><a href="<?php echo count(explode('/', $_SERVER['REQUEST_URI'])) == 3 ? './php/vehiculos/vehiculos.php' : '/'.explode('/', $_SERVER['REQUEST_URI'])[1].'/php/vehiculos/vehiculos.php'; ?>">Altas</a></li>
