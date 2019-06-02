@@ -31,7 +31,7 @@
                     
                     <div class="container-all flex flex-column flex-center center-align">
                         <h3 class="mtop40">Introduzca el NIV del vehículo a modificar</h3>
-                        <form method="GET">
+                        <form method="GET" style="width:60%;">
                             <input type="text" name="NIV" id="" class="validate">
                             <button class="btn waves-effect waves-light mtop20 mbot20 light-blue darken-4">Aceptar</button>
                         </form>
@@ -45,10 +45,10 @@
                                 while($rV = mysqli_fetch_array($rVehiculo)){
                                 
                         ?>
-                        <form action="actualizar.php" method="POST" style="width:50%;">
+                        <form action="actualizar.php" method="POST" style="width:60%;">
                         <div class="input-field mtop40">
                         <label for="">ID</label>
-                                <input type="text" name="id" id="" class="validate" value="<?php echo($rV['idVehiculo'])?>" required>
+                                <input type="text" name="id" id="" class="validate" value="<?php echo($rV['idVehiculo'])?>" readonly="readonly">
                         </div> 
                         <div class="input-field mtop40">
                         <label for="">NIV</label>

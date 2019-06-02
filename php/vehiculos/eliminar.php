@@ -4,7 +4,8 @@
 		header('location: verVehiculos.php');
 	}
 	$conductor = $_GET['NIV'];
-	$qEliminar = 'UPDATE vehiculos SET Estatus = 0 WHERE NIV ="'.$conductor.'";';
+	$qEliminar = 'DELETE FROM vehiculos WHERE NIV ="'.$conductor.'";';
 	// die(var_dump($qEliminar));
-    consulta($qEliminar); 
+	consulta($qEliminar); 
+	odbcConsulta($qEliminar);
     header('location: verVehiculos.php');

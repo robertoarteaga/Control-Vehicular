@@ -28,9 +28,10 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
     $Origen = $_POST['Origen'];
     
     $qInsert= ('INSERT INTO vehiculos VALUES ("","'.$Propietario.'","'.$NIV.'","'.$Placa.'","'.$Tipo.'","'.$Color.'","'.$Uso.'","'.$Puerta.'"
-        ,"'.$Marca.'","'.$Motor.'","'.$Serie.'","'.$Modelo.'","'.$Combustible.'","'.$Year.'","'.$Cilindraje.'","'.$Transmision.'","'.$Linea.'","'.$Origen.'");');
-        // die(var_dump($qInsert));
+        ,"'.$Marca.'","'.$Motor.'","'.$Serie.'","'.$Modelo.'","'.$Combustible.'","'.$Year.'","'.$Cilindraje.'","'.$Transmision.'","'.$Linea.'","'.$Origen.'","1");');
+    // die(var_dump($qInsert));
     $res=consulta($qInsert);
+    odbcConsulta($qInsert);
     $status = mysqli_affected_rows($res);
     // die(var_dump($status));
     if($status == 1){

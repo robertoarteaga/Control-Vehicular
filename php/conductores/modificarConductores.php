@@ -51,7 +51,7 @@
                         <form action="actualizar.php" method="POST" class="mtop40" style="width:60%;">
                             <div class="input-field mtop40">
                                 <label>RFC</label>
-                                    <input type="text" name="nrfc" id="" class="validate"  value="<?php echo  $rC['RFC']; ?>" disabled>
+                                    <input type="text" name="nrfc" id="" class="validate"  value="<?php echo  $rC['RFC']; ?>" readonly="readonly">
                             </div>
                             <div class="input-field">
                                 <label>Nombre</label>

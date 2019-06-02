@@ -29,4 +29,22 @@ function select($select){
 	// $rows = mysqli_num_rows($select);
 	return $result;
 }
+// TABLA ESPEJO VEHICULOS
+function conexionODBCcopia(){
+    $info=parse_ini_file("config.ini");
+    $dsnC = $info['dsnC']; 
+    $userC= $info['userC'];
+    $passC= $info['passC'];
+    $odbcC = odbc_connect($dsnC,$userC,$passC);
+    // die(var_dump($odbcC));
+    return $odbcC;
+}
+function cerrarODBC($conexion){
+    odbc_close($conexion);
+}
+function odbcConsulta($query){
+    $conexion  = conexionODBCcopia();
+    $consulta = odbc_exec($conexion,$query);
+    return $conexion;
+}
 ?>

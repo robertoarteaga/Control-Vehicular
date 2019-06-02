@@ -42,6 +42,7 @@ if(!isset($_POST['NIV'])){
     // die(var_dump($qInsert));
 
     $res=consulta($qInsert);
+    odbcConsulta($qInsert);
     $status = mysqli_affected_rows($res);
     header('location: verVehiculos.php');
 
