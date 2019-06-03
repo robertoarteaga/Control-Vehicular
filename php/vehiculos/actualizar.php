@@ -5,7 +5,7 @@ if(!isset($_POST['NIV'])){
     // die(var_dump($_POST['NIV']));
     header('location: verConductores.php');
 }
-    $id = $_POST['id'];
+    $RFC = $_POST['id'];
     $Propietario = $_POST['Propietario'];
     $NIV = $_POST['NIV'];
     $Placa = $_POST['Placa'];
@@ -25,21 +25,31 @@ if(!isset($_POST['NIV'])){
     $Origen = $_POST['Origen'];
 
 
+
+    $pathXML = parse_ini_file('./../config/config.ini')['pathXML'];
     $dom = new SimpleXMLElement( '<?xml version = "1.0"
-    encoding = "utf-8" ?> <vehiculo></Vehiculo>' );
-    $ing = $dom->addChild('Conductores');
-    $ing -> addChild('ID:',$id);
-    $ing -> addChild('NIV:',$NIV);
-    $ing -> addChild('Placa:',$Placa);
-    $ing -> addChild('Serie:',$Serie);
+    encoding = "utf-8" ?> <multas></multas>' );
+    $ing = $dom->addChild('multas');
+    $ing -> addChild('Vehiculo:',$vehiculo);
+    $ing -> addChild('Licencia:',$licencia);
+    $ing -> addChild('Motivo:',$motivo);
+    $ing -> addChild('Emisor:',$emisor);
+    $ing -> addChild('Monto:',$monto);
+    $ing -> addChild('Descripción:',$descripcion);
+    $ing -> addChild('Garantia:',$garantia);
+    $ing -> addChild('Fecha:',$date);
+
     $xmlData = $dom->saveXML();
     $dom->formatOutput = true;
-    $d=$RFC.date('is');
-    $strings_xml = $dom->saveXML("C:/xampp/htdocs/Control-Vehicular/temp/$d.xml");
+    $d=$RFC.'_'.date('is');
+    $strings_xml = $dom->saveXML("$pathXML/vehiculos/modificaciones/$d.xml");
 
     $qInsert= ('UPDATE vehiculos SET Propietario = "'.$Propietario.'", Placa = "'.$Placa.'", Tipo = "'.$Tipo.'", Color = "'.$Color.'", Uso = "'.$Uso.'", numPuerta = "'.$Puerta.'"
     , Marca = "'.$Marca.'",numMotor = "'.$Motor.'",numSerie = "'.$Serie.'",Modelo = "'.$Modelo.'",Combustible = "'.$Combustible.'",Year = "'.$Year.'",Cilindraje = "'.$Cilindraje.'", Transmision = "'.$Transmision.'", Linea = "'.$Linea.'", Origen = "'.$Origen.'" WHERE idVehiculo ="'.$id.'";');
     // die(var_dump($qInsert));
+    
+    $pathPDF = parse_ini_file('./../config/config.ini')['pathPDF'];
+    require('../../PDF/Cambios.php');
 
     $res=consulta($qInsert);
     odbcConsulta($qInsert);

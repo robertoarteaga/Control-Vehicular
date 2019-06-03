@@ -5,12 +5,12 @@ $pdf = new FPDF();
 $pdf->AddPage('L', array(105,200));
 
 
-$pdf->image('SDS.png',5,5,40);
-$pdf->image('CVV.png',50,7,18);
+$pdf->image('../../PDF/SDS.png',5,5,40);
+$pdf->image('../../PDF/CVV.png',50,7,18);
 $pdf->ln();$pdf->ln();$pdf->ln();$pdf->ln();
 include("Conexion.php");
 $Con = Conectar();
-$SQL ="SELECT * FROM vehiculos WHERE idVehiculo=4";
+$SQL ="SELECT * FROM vehiculos WHERE idVehiculo=$vehiculo";
 $Query = EjecutarConsulta($Con, $SQL);
 
    for ($I = 0;$I<mysqli_num_rows($Query);$I++)
@@ -19,7 +19,7 @@ $Query = EjecutarConsulta($Con, $SQL);
    $pdf->SetFont('Arial','B',10);
    $pdf->Cell(0,4,utf8_decode('PROGRAMA ESTATAL DE VERIFICACIÓN VEHICULAR'),0,1,'R') ;
    $pdf->Cell(0,4,utf8_decode('GOBIERNO DEL ESTADO DE QUERÉTARO'),0,1,'R') ;
-   $pdf->image('codigo.png',145,18,45,12);
+   $pdf->image('../../PDF/codigo.png',145,18,45,12);
    $pdf->ln();
    $pdf->Cell(40,3.5,utf8_decode('DATOS DEL VEHÍCULO'),0,1,'L');
    $pdf->ln(); $pdf->ln(); 
@@ -42,7 +42,7 @@ $Query = EjecutarConsulta($Con, $SQL);
    $pdf->Cell(40,3.5,utf8_decode('NÚMERO DE CILINDROS'),0,0,'L' ); $pdf->Cell(40,3.5,utf8_decode('TIPO DE CARROCERÍA'),0,0,'C'); $pdf->Cell(40,3.5,utf8_decode('ENTIDAD FEDERATIVA'),0,0,'R');$pdf->Cell(40,3.5,utf8_decode('MUNICIPIO'),0,1,'R');
    $pdf->ln();
 }
-   $SQL2 ="SELECT * FROM verificaciones WHERE Vehiculo=4";
+   $SQL2 ="SELECT * FROM verificaciones WHERE Vehiculo=$vehiculo";
    $Query2 = EjecutarConsulta($Con, $SQL2);
    
       for ($f = 0;$f<mysqli_num_rows($Query);$f++)
@@ -60,6 +60,6 @@ $Query = EjecutarConsulta($Con, $SQL);
 
 }
 
-$pdf->Output();
+$pdf->Output("$pathPDF/verificaciones/$d.pdf", "F");
  ?>
 
