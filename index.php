@@ -26,7 +26,7 @@
 					<div class="file-field input-field">
 						<div class="btn light-blue darken-4">
 							<span>Firma</span>
-							<input type="file" multiple name="key" id="firma">
+							<input type="file" multiple name="key" style="visibility: visible;"class="inputfile">
 						</div>
 					</div></p>
 					<p>
