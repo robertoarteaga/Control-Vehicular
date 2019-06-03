@@ -47,7 +47,7 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
 
 
         echo'<script type="text/javascript">
-                alert("Conductor Agregado");
+                alert("Agregado");
                 window.location.href="../../main.php";
                 </script>';
     }else{

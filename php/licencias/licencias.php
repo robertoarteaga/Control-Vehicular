@@ -29,7 +29,7 @@
                             <select name="RFC">
                                 <option value="" disabled selected>Selecciona el conductor</option>
                                 <?php 
-                                    $qVehiculos = "SELECT * FROM conductores;";
+                                    $qVehiculos = "SELECT * FROM conductores WHERE Estatus = 1";
                                     $rVehiculos = select($qVehiculos);
                                     // die(var_dump($rConductor));
                                     while($rP = mysqli_fetch_array($rVehiculos)){

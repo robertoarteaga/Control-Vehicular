@@ -95,7 +95,6 @@
                             <select name="columna">
                                 <option value="" disabled selected>Columna</option>
                                 <option value="Folio">Folio</option>
-                                <option value="idVerificacion">Id Verificación</option>
                                 <option value="idVehiculo">ID Vehículo</option>
                                 <option value="Licencia">Licencia</option>
                                 <option value="Motivo">Motivo</option>
@@ -125,7 +124,6 @@
                                 <thead>
                                     <tr>
                                         <th>Folio</th>
-                                        <th>ID Verificación</th> 
                                         <th>ID Vehículo</th> 
                                         <th>Licencia</th>
                                         <th>Motivo</th>
@@ -144,7 +142,6 @@
                                     ?>
                                         <tr>
                                             <td><?php echo utf8_encode($rP['Folio']); ?></td>
-                                            <td><?php echo utf8_encode($rP['idVerificacion']); ?></td>
                                             <td><?php echo utf8_encode($rP['idVehiculo']); ?></td>
                                             <td><?php echo utf8_encode($rP['Licencia']); ?></td>
                                             <td><?php echo utf8_encode($rP['Motivo']); ?></td>
