@@ -25,8 +25,8 @@
                     <div class="container-all flex flex-column flex-center center-align">
                         <h3 class="mtop20">Introduzca los siguentes datos</h3>
                         <!-- FORMULARIO -->
-                        <form action="agregar.php" method="POST" style="width:60%;">
-                            <select name="rfc">
+                        <form action="agregar.php" method="POST" style="width:60%;" enctype="multipart/form-data">
+                            <select name="RFC">
                                 <option value="" disabled selected>Selecciona el conductor</option>
                                 <?php 
                                     $qVehiculos = "SELECT * FROM conductores;";
@@ -56,10 +56,10 @@
                             <div class="file-field input-field">
                                     <div class="btn light-blue darken-4">
                                         <span>Subir</span>
-                                        <input type="file" multiple name="firma">
+                                        <input type="file" name="foto">
                                     </div>
                                     <div class="file-path-wrapper">
-                                        <input class="file-path validate" name="firma" type="text" placeholder="Foto del conductor.">
+                                        <input class="file-path validate" name="foto" type="text" placeholder="Foto del conductor.">
                                     </div>
                             </div>
                             <div class="input-field mtop40">

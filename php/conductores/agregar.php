@@ -60,8 +60,8 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
         $ing -> addChild('Tipo de Sangre:',$TipoSangre);
         $xmlData = $dom->saveXML();
         $dom->formatOutput = true;
-        $d=$RFC.date('is');
-        $strings_xml = $dom->saveXML("$pathXML/$d.xml");
+        $d=$RFC.'_'.date('is');
+        $strings_xml = $dom->saveXML("$pathXML/conductores/$d.xml");
 
         
         echo'<script type="text/javascript">
