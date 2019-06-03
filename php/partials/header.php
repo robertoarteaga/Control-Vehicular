@@ -38,7 +38,7 @@
                                     <li><a href="<?php echo count(explode('/', $_SERVER['REQUEST_URI'])) == 3 ? './php/vehiculos/verVehiculos.php' : '/'.explode('/', $_SERVER['REQUEST_URI'])[1].'/php/vehiculos/verVehiculos.php'; ?>">Ver</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Verificaciones</a></li>
+                            <li><a href="<?php echo count(explode('/', $_SERVER['REQUEST_URI'])) == 3 ? './php/verificaciones/verificaciones.php' : '/'.explode('/', $_SERVER['REQUEST_URI'])[1].'/php/verificaciones/verificaciones.php'; ?>">Verificaciones</a></li>
                         </ul>
                     </div>
         </div>
