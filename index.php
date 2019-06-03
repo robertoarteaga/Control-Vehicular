@@ -18,18 +18,17 @@
 	<div class="container-absolute flex">
 		<div class="container-left flex flex-column">
 			<div class="container-login flex flex-column">
-				<form action="php/login.php" method="post">
+				<form action="php/login.php" method="post" enctype="multipart/form-data">
 					<h1>Inicio de sesión</h1>
 					<p><span class="fontawesome-user"></span><input type="text" id="logUser" name="usuario" placeholder="Usuario"></p>
                     <p><span class="fontawesome-lock"></span><input type="password" id="logPassword" name="password" placeholder="Password" ></p>
 					<p>
 					<div class="file-field input-field">
-                                    <div class="btn light-blue darken-4">
-                                        <span>Firma</span>
-                                        <input type="file" multiple name="key" id="firma">
-                                    </div>
-                                </div></p>
-                    
+						<div class="btn light-blue darken-4">
+							<span>Firma</span>
+							<input type="file" multiple name="key" id="firma">
+						</div>
+					</div></p>
 					<p>
 					<button type="submit">Aceptar</button></p>
 				</form>
