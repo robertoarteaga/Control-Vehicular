@@ -24,8 +24,7 @@
                 </div>
             </div>
             <div class="container-content flex">
-                <div class="container-card flex ">
-                    <input type="text">
+                <div class="container-card flex " id="bg-inicio">
                 </div>
             </div>
         </div>

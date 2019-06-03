@@ -116,6 +116,7 @@ body{
     color: white;
     justify-content: center;
     align-items: flex-end;
+    padding-bottom: 28px;
 }
 
 
@@ -247,4 +248,9 @@ h4{
 .space-ar{
     flex-flow: row wrap;
     justify-content: space-around;
+}
+#bg-inicio{
+    background-image: url(../img/bienvenido.png);
+    background-repeat: no-repeat;
+    background-position: center;
 }
