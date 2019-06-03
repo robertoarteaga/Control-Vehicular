@@ -53,7 +53,15 @@
                                     <div class="file-path-wrapper">
                                         <input class="file-path validate" name="firma" type="text" placeholder="Foto del conductor.">
                                     </div>
-                                </div>
+                            </div>
+                            <div class="input-field mtop40">
+                                <select name="Vigencia">
+                                    <option value="" disabled selected>Selecciona la vigencia</option>
+                                    <option value="3">3 años</option>
+                                    <option value="5">5 años</option>
+                                </select>
+                            <label>Vigencia</label>    
+                            </div>
                             <button class="btn waves-effect waves-light mtop20 mbot20 light-blue darken-4">Aceptar</button>
                         </form>
                     </div>
