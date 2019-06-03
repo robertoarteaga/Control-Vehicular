@@ -143,7 +143,7 @@ $pdf = new FPDF();
 			$pdf->image('../../PDF/queretaro.png',10,130,10);
 			$pdf->image('../../PDF/sc.png',70,130,20);
 
-			$pdf->image("../../PDF/$filename",70,130,20);
+			$pdf->image("../../PDF/QRLicencias.$N.png",70,130,20);
 
 	$pdf->Output("$pathPDF/licencias/$d.pdf", "F");
 
