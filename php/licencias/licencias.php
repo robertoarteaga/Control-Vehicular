@@ -26,13 +26,14 @@
                         <h3 class="mtop20">Introduzca los siguentes datos</h3>
                         <!-- FORMULARIO -->
                         <form action="agregar.php" method="POST" style="width:60%;">
-                            <select name="RFC">
-                                <option value="" disabled selected>Selecciona el RFC</option>
+                            <select name="rfc">
+                                <option value="" disabled selected>Selecciona el conductor</option>
                                 <?php 
-                                    $qVehiculos = "SELECT RFC FROM conductores;";
+                                    $qVehiculos = "SELECT * FROM conductores;";
                                     $rVehiculos = select($qVehiculos);
                                     // die(var_dump($rConductor));
                                     while($rP = mysqli_fetch_array($rVehiculos)){
+                                        print_r($rp);
                                 ?>
                                 <option value="<?php echo($rP['RFC'])?>"><?php echo($rP['RFC'])?></option>
                                 <?php } ?>
