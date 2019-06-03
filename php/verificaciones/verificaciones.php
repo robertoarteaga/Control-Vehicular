@@ -33,7 +33,7 @@
                         <h3 class="mtop20">Verificaciones</h3>
                         <!-- FORMULARIO -->
                         
-                        <form action="#" method="POST" style="width:60%;">
+                        <form action="agregar.php" method="POST" style="width:60%;">
                             <div class="input-field mtop40">
                                 <select name="Vehiculo">
                                     <option value="" disabled selected>Selecciona el NIV</option>

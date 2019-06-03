@@ -22,7 +22,16 @@
 					<h1>Inicio de sesión</h1>
 					<p><span class="fontawesome-user"></span><input type="text" id="logUser" name="usuario" placeholder="Usuario"></p>
                     <p><span class="fontawesome-lock"></span><input type="password" id="logPassword" name="password" placeholder="Password" ></p>
-                    <p><button type="submit">Aceptar</button></p>
+					<p>
+					<div class="file-field input-field">
+                                    <div class="btn light-blue darken-4">
+                                        <span>Firma</span>
+                                        <input type="file" multiple name="key" id="firma">
+                                    </div>
+                                </div></p>
+                    
+					<p>
+					<button type="submit">Aceptar</button></p>
 				</form>
 			</div>
 		</div>

@@ -31,9 +31,15 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
         ,"'.$Marca.'","'.$Motor.'","'.$Serie.'","'.$Modelo.'","'.$Combustible.'","'.$Year.'","'.$Cilindraje.'","'.$Transmision.'","'.$Linea.'","'.$Origen.'","1");');
     // die(var_dump($qInsert));
     $res=consulta($qInsert);
+
     odbcConsulta($qInsert);
     $status = mysqli_affected_rows($res);
+    
     // die(var_dump($status));
+    $owner = $Propietario;
+    $pathPDF = parse_ini_file('./../config/config.ini')['pathPDF'];
+    $d=$Propietario.date('is');
+    include('../../PDF/vehiculos.php');
     if($status == 1){
         echo'<script type="text/javascript">
                 alert("Vehículo Agregado");

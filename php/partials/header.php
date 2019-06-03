@@ -1,5 +1,6 @@
 <!-- HEADER -->
 <header>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <div class="container-menu flex flex-column">
         <div class="container-menu-title flex">
             <h1>Menu</h1>

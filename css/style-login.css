@@ -126,3 +126,10 @@
     background-position-x: -20px;
     
 }
+input[type='file']#firma {
+    width: 150px;
+    height: 70px;
+    opacity: 0;
+    overflow: hidden;
+    background-color: black;
+    }
