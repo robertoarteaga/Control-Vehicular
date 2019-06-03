@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-05-2019 a las 22:33:46
+-- Tiempo de generación: 03-06-2019 a las 19:30:24
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.0
 
@@ -32,31 +32,15 @@ CREATE TABLE `conductores` (
   `RFC` char(13) NOT NULL,
   `Nombre` varchar(100) NOT NULL,
   `FechaNacimiento` date NOT NULL,
-  `Firma` blob NOT NULL,
+  `Firma` text NOT NULL,
   `Domicilio` varchar(100) NOT NULL,
   `Antiguedad` smallint(2) NOT NULL,
-  `TelEmergencia` char(15) NOT NULL,
   `Sexo` char(1) NOT NULL,
   `TipoSangre` varchar(3) NOT NULL,
   `Restriccion` varchar(100) DEFAULT NULL,
+  `TelEmergencia` char(15) NOT NULL,
   `Estatus` smallint(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `conductores`
---
-
-INSERT INTO `conductores` (`RFC`, `Nombre`, `FechaNacimiento`, `Firma`, `Domicilio`, `Antiguedad`, `TelEmergencia`, `Sexo`, `TipoSangre`, `Restriccion`, `Estatus`) VALUES
-('1', 'Roberto Arteaga Solís', '2019-03-04', '', 'Jesuitas 17 Misión de San Carlos', 6, '2161542', 'M', 'B+', 'Ninguna', 0),
-('ACFSTEPDN2989', 'Aristides Camacho Sánchez', '1998-11-22', '', 'Av Siempre Viva #521', 1, '4212491', 'M', 'ROH', NULL, 0),
-('ACLOPSHEY4872', 'Andrea Cecilia López González', '1998-11-22', '', '', 2, '76253910', '', '', NULL, 0),
-('AESR980609HQT', 'Roberto Arteaga Solís', '1998-06-09', 0x647367, 'Jesuitas 17', 6, '1345672', '', 'B-', 'na', 0),
-('EDURYV2371BJ', 'Edwin Ramirez Martínez', '1998-05-19', '', 'Av. San Pablo', 3, '2101616', '', 'k', 'Otaku', 0),
-('HAKAOQBAO', 'Juan Pablo Olvera Sánchez', '1997-12-09', '', 'Av. Siempre Viva S/N', 3, '6954321', '', 'O+', 'na', 0),
-('HQIRKNFNI294', 'Hector Hazael HernÃ¡ndez Cabrera', '1996-04-22', '', 'jbgdgjldsgbsjkgakjb', 1, '14124', '', 'c', 'wgg', 0),
-('kbjbbkj', 'Eladio Rocha Vizcaino', '1998-12-12', '', 'Av. de las Ciencias S/N', 3, '9236532', 'M', 'A+', 'na', 0),
-('URIFDIRI23OI2', 'Uriel Cordoba Cruz', '1997-11-23', '', 'Av. Reforma #1314', 4, '', 'F', 'A', 'NINGUNA', 0),
-('ZAMFJSFIEIW93', 'Diana Laura Zamora Zepeda', '2000-05-13', '', 'Cerro de las campanas #23', 2, '5243691', 'F', 'O-', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -74,12 +58,6 @@ CREATE TABLE `licencias` (
   `Donador` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `licencias`
---
-
-INSERT INTO `licencias` (`Folio`, `Conductor`, `TipoLicencia`, `FechaExpedicion`, `FechaVencimiento`, `Estado`, `Donador`) VALUES
-(1, '1', 'B', '2019-03-04', '2019-12-01', '1', 'Si');
 
 -- --------------------------------------------------------
 
@@ -89,25 +67,16 @@ INSERT INTO `licencias` (`Folio`, `Conductor`, `TipoLicencia`, `FechaExpedicion`
 
 CREATE TABLE `multas` (
   `Folio` int(8) NOT NULL,
-  `idVerificacion` int(8) NOT NULL,
   `idVehiculo` int(8) NOT NULL,
   `Licencia` int(10) NOT NULL,
   `Motivo` varchar(50) NOT NULL,
   `Emisor` varchar(6) NOT NULL,
-  `Fecha` date NOT NULL,
+  `Fecha` datetime DEFAULT CURRENT_TIMESTAMP,
   `Monto` mediumint(6) NOT NULL,
   `Descripcion` varchar(100) NOT NULL,
   `Garantia` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `multas`
---
-
-INSERT INTO `multas` (`Folio`, `idVerificacion`, `idVehiculo`, `Licencia`, `Motivo`, `Emisor`, `Fecha`, `Monto`, `Descripcion`, `Garantia`) VALUES
-(1, 10, 4, 1, 'Exceso de humo', 'Juan O', '2019-03-04', 1, 'Ninguna', 'Licencia');
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `propietarios`
@@ -122,17 +91,6 @@ CREATE TABLE `propietarios` (
   `Estatus` int(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `propietarios`
---
-
-INSERT INTO `propietarios` (`RFC`, `Nombre`, `Direccion`, `Telefono`, `Correo`, `Estatus`) VALUES
-('1', 'hola perra', '1', '1', 'prra@gmail.com', 0),
-('AESR980609HQT', 'Roberto', 'Jesuitas 17', '4423718241', 'robert-art1@hotmail.com', 1),
-('dfakadfknkn', 'lnk', 'Av de la Luz #1145', 'idk', 'pinpik@hotmail.com', 0),
-('LOGA981123HQT', 'Andrea Lopez Gonzalez', 'Negreta', '4423592139', 'correo@gmail.com', 1),
-('SFJEPWNIEFEF', 'Liz Montoya Silva', 'Av. Felicidad #535', '2489324', 'liz@gmail.com', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -146,16 +104,6 @@ CREATE TABLE `robos` (
   `Fecha` date NOT NULL,
   `Status` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `robos`
---
-
-INSERT INTO `robos` (`idReporte`, `Vehiculo`, `Lugar`, `Fecha`, `Status`) VALUES
-(1, 4, 'Obrera', '2019-02-19', '1'),
-(2, 4, 'Obrera', '2019-02-19', '1'),
-(3, 4, 'Obrera', '2019-02-19', '1'),
-(4, 4, 'Obrera', '2019-02-19', '1');
 
 -- --------------------------------------------------------
 
@@ -172,13 +120,6 @@ CREATE TABLE `tenencias` (
   `Antiguedad` smallint(2) DEFAULT NULL,
   `Descuento` smallint(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `tenencias`
---
-
-INSERT INTO `tenencias` (`Folio`, `Vehiculo`, `Periodo`, `FechaPago`, `Monto`, `Antiguedad`, `Descuento`) VALUES
-(1, 4, '2019-1', '2019-02-18', 1000, 1, 10);
 
 -- --------------------------------------------------------
 
@@ -205,18 +146,6 @@ CREATE TABLE `usuarios` (
   `estado` tinyint(4) DEFAULT NULL,
   `intentos` smallint(6) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`username`, `password`, `tipo`, `estado`, `intentos`) VALUES
-('Andrea', '1234', 'USU', 1, 0),
-('Anonimo', 'anonimo123', 'USU', 0, 0),
-('Beto', '4321', 'ADM', 0, 0),
-('Daniel', 'Daniel123', 'OTR', 1, 0),
-('Jovan', '1234', 'otr', 0, 0),
-('Marco', '12345678', 'ADM', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -246,17 +175,6 @@ CREATE TABLE `vehiculos` (
   `Estatus` smallint(6) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `vehiculos`
---
-
-INSERT INTO `vehiculos` (`idVehiculo`, `Propietario`, `NIV`, `Placa`, `Tipo`, `Color`, `Uso`, `numPuerta`, `Marca`, `numMotor`, `numSerie`, `Modelo`, `Combustible`, `Year`, `Cilindraje`, `Transmision`, `Linea`, `Origen`, `Estatus`) VALUES
-(4, 'AESR980609HQT', 'HGY567', 'KBHJV547', '1', 'Azul', 'Particular', 2, 'BMW', 'Prueba', 'Europea', '2017', 'Premium', 2018, 4, 'AutomÃ¡tic', 'Americana', 'Nacional', 1),
-(9, 'SFJEPWNIEFEF', '2', '2', '2', '1', '1', 1, '1', '1', '1', '1', '1', 1, 1, '1', '1', '1', 1),
-(11, 'SFJEPWNIEFEF', '3', '3', '3', '1', '1', 1, '1', '1', '1', '1', '1', 1, 1, '1', '1', '1', 1),
-(12, 'SFJEPWNIEFEF', '4', '4', '4', '1', '1', 1, '1', '1', '1', '1', '1', 1, 1, '1', '1', '1', 1),
-(13, 'SFJEPWNIEFEF', '1', '1', '1', '1', '1', 1, '1', '1', '1', '1', '1', 1, 1, '1', '1', '1', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -271,20 +189,6 @@ CREATE TABLE `verificaciones` (
   `Tipo` char(20) NOT NULL,
   `Dictamen` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `verificaciones`
---
-
-INSERT INTO `verificaciones` (`idVerificacion`, `Vehiculo`, `Periodo`, `CentroVerificacion`, `Tipo`, `Dictamen`) VALUES
-(1, 4, '2019-1', 'Juriquilla', '2019-02-18', 'Aprovado'),
-(2, 4, '2019-1', 'Juriquilla', '2019-02-18', 'Aprovado'),
-(3, 4, '', '', '', ''),
-(6, 4, '2018-1', '1', '2019-02-20', 'Rechazado'),
-(7, 4, '2018-1', '1', '2019-02-20', 'Rechazado'),
-(8, 4, '2018-1', '1', '2019-02-20', 'Rechazado'),
-(9, 4, '2018-1', '1', '2019-02-20', 'Rechazado'),
-(10, 4, '2018-1', '1', '2019-02-20', 'Rechazado');
 
 --
 -- Índices para tablas volcadas
@@ -309,7 +213,6 @@ ALTER TABLE `licencias`
 ALTER TABLE `multas`
   ADD PRIMARY KEY (`Folio`),
   ADD KEY `idVehiculo` (`idVehiculo`),
-  ADD KEY `idVerificacion` (`idVerificacion`),
   ADD KEY `Licencia` (`Licencia`);
 
 --
@@ -398,7 +301,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `vehiculos`
 --
 ALTER TABLE `vehiculos`
-  MODIFY `idVehiculo` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idVehiculo` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `verificaciones`
@@ -421,7 +324,6 @@ ALTER TABLE `licencias`
 --
 ALTER TABLE `multas`
   ADD CONSTRAINT `multas_ibfk_1` FOREIGN KEY (`idVehiculo`) REFERENCES `vehiculos` (`idVehiculo`),
-  ADD CONSTRAINT `multas_ibfk_2` FOREIGN KEY (`idVerificacion`) REFERENCES `verificaciones` (`idVerificacion`),
   ADD CONSTRAINT `multas_ibfk_3` FOREIGN KEY (`Licencia`) REFERENCES `licencias` (`Folio`);
 
 --
