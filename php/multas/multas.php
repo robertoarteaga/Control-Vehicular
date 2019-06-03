@@ -36,49 +36,57 @@
                         <form action="#" method="POST" style="width:60%;">
                             <div class="input-field mtop40">
                                 <select name="Vehiculo">
-                                    <option value="" disabled selected>Selecciona el número de verificación</option>
+                                    <option value="" disabled selected>Selecciona el ID del vehículo</option>
                                     <?php 
-                                        $qVehiculos = "SELECT idVerificacion FROM vehiculos;";
+                                        $qVehiculos = "SELECT idVehiculo FROM vehiculos ORDER BY idVehiculo;";
                                         $rVehiculos = select($qVehiculos);
                                         // die(var_dump($rConductor));
                                         while($rP = mysqli_fetch_array($rVehiculos)){
                                     ?>
-                                    <option value="<?php echo($rP['NIV'])?>"><?php echo($rP['NIV'])?></option>
+                                    <option value="<?php echo($rP['idVehiculo'])?>"><?php echo($rP['idVehiculo'])?></option>
                                     <?php } ?>
                                 </select>
                             <label>Vehículo</label>    
                             </div>
                             
                             <div class="input-field mtop40">
-                                <select name="Periodo">
-                                    <option value="" disabled selected>Selecciona el Periodo</option>
-                                    <option value="2019-1">Enero - Junio</option>
-                                    <option value="2019-1">Julio - Diciembre</option>
+                                <select name="Licencia">
+                                    <option value="" disabled selected>Selecciona la Licencia</option>
+                                    <?php 
+                                        $qLicencias = "SELECT Folio FROM licencias;";
+                                        $rLicencias = select($qLicencias);
+                                        // die(var_dump($rConductor));
+                                        while($rP = mysqli_fetch_array($rLicencias)){
+                                    ?>
+                                    <option value="<?php echo($rP['Folio'])?>"><?php echo($rP['Folio'])?></option>
+                                    <?php } ?>
                                 </select>
-                            <label>Periodo</label>    
+                            <label>Licencia</label>    
                             </div>
 
                             <div class="input-field mtop40">
-                                <label for="">Centro de Verificación</label>
-                                <input type="text" name="Centro" id="" class="validate" required>
-                            </div>
-                            
-                            <div class="input-field mtop40">
-                                <select name="Tipo">
-                                    <option value="" disabled selected>Selecciona el Tipo</option>
-                                    <option value="Ordinario">Ordinario</option>
-                                    <option value="Extraordinario">Extraordinario</option>
-                                </select>
-                            <label>Tipo</label>    
+                                <label for="">Motivo</label>
+                                <input type="text" name="Motivo" id="" class="validate" required>
                             </div>
 
                             <div class="input-field mtop40">
-                                <select name="Tipo">
-                                    <option value="" disabled selected>Selecciona el Tipo</option>
-                                    <option value="Aprobado">Aprobado</option>
-                                    <option value="Rechazado">Rechazado</option>
-                                </select>
-                            <label>Dictamen</label>    
+                                <label for="">Emisor</label>
+                                <input type="text" name="Emisor" id="" class="validate" required>
+                            </div>
+
+                            <div class="input-field mtop40">
+                                <label for="">Monto</label>
+                                <input type="text" name="Monto" id="" class="validate" required>
+                            </div>
+
+                            <div class="input-field mtop40">
+                                <label for="">Descripcion</label>
+                                <input type="text" name="Descripcion" id="" class="validate" required>
+                            </div>
+
+                            <div class="input-field mtop40">
+                                <label for="">Garantía</label>
+                                <input type="text" name="Garantia" id="" class="validate" required>
                             </div>
                             <button class="btn waves-effect waves-light mtop20 mbot20 light-blue darken-4">Aceptar</button>
                         </form>
