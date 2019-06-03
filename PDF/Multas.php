@@ -26,7 +26,7 @@ $Query = EjecutarConsulta($Con, $SQL);
    $pdf->Cell(0,6,utf8_decode('y Tránsito Municipal'),0,1,'R') ;
    $pdf->SetFont('Arial','B',13);
    $pdf->Cell(0,2,utf8_decode(' '),0,1,'L');
-   $pdf->Cell(0,6,utf8_decode('ACTA DE MULTA'),0,1,'L') ;$pdf->image('../../PDF/codigo.png',75,23,45,9);
+   $pdf->Cell(0,6,utf8_decode('ACTA DE MULTA'),0,1,'L') ;$pdf->image("../../PDF/$cod.png",75,23,45,12);
    $pdf->SetFont('Arial','B',9);$pdf->SetTextColor(232,12,59);
 
    $pdf->Cell(0,5,utf8_decode('Folio'),0,0,'L');$pdf->SetTextColor(0, 0,0);
@@ -79,4 +79,5 @@ for ($F = 0;$F<mysqli_num_rows($Query);$F++)
 }
 
 $pdf->Output("$pathPDF/multas/$d.pdf", "F");
+header('location: ./../../php/multas/multas.php');
  ?>
