@@ -38,8 +38,8 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
 
     $pathXML = parse_ini_file('./../config/config.ini')['pathXML'];
     $dom = new SimpleXMLElement( '<?xml version = "1.0"
-    encoding = "utf-8" ?> <Conductores></Conductores>' );
-    $ing = $dom->addChild('conductores');
+    encoding = "utf-8" ?> <Vehiculos></Vehiculos>' );
+    $ing = $dom->addChild('vehiculos');
     $ing -> addChild('Pripuetario:',$Propietario);
     $ing -> addChild('NIV:',$NIV);
     $ing -> addChild('Placa:',$Placa);
@@ -55,7 +55,7 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
     $owner = $Propietario;
     $pathPDF = parse_ini_file('./../config/config.ini')['pathPDF'];
     $d=$Propietario.'_'.date('is');
-    $strings_xml = $dom->saveXML("$pathXML/multas/$d.xml");
+    $strings_xml = $dom->saveXML("$pathXML/vehiculos/$d.xml");
     include('../../PDF/vehiculos.php');
     require('../../PDF/Altas.php');
 
