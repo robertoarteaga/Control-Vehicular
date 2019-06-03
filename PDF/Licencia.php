@@ -3,7 +3,7 @@ require ('fpdf/fpdf.php');
 
 require "phpqrcode/qrlib.php";
 
-$dir='../../PDF';
+$dir='../../PDF/';
 
 $N=1;
 $date = date('m/d/Y h:i:s a', time());
@@ -13,7 +13,7 @@ $level ='M';
 $framSize= 3;
 $contenido="Numero de Licencia:" .$N."\n
            Fecha de Expedición:" .$date."\n
-				   Fecha de Vencimiento:" .'5 años xD'."\n
+				   Fecha de Vencimiento:" .$date2."\n
 				   Tipo de Licencia:" .'1';
 
 QRcode::png($contenido,$filename,$level,$tamano,$framSize);
@@ -95,7 +95,7 @@ $pdf = new FPDF();
 			$pdf-> Cell(0,4,'Firma',0,1,'C');
 			$pdf->image("../../img/users/photo/$newFileName",40,95,20);
 			$pdf->SetFont('Arial','',6);
-			$pdf->ln();$pdf->ln();$pdf->ln();$pdf->ln();
+			$pdf->ln();$pdf->ln();$pdf->ln();$pdf->ln();$pdf->ln();$pdf->ln();
 			$pdf-> Cell(60,1.8,'AUTORIADO PARA QUE LA PRESENTE',0,1,'R');
 			$pdf-> Cell(60,1.8,'SEA RECABADA COMO GARANTIA DE',0,1,'R');
 			$pdf-> Cell(50,1.8,'INFRACCION',0,0,'R');
@@ -143,7 +143,7 @@ $pdf = new FPDF();
 			$pdf->image('../../PDF/queretaro.png',10,130,10);
 			$pdf->image('../../PDF/sc.png',70,130,20);
 
-			$pdf->image("../../PDF/QRLicencias.$N.png",70,130,20);
+			$pdf->image("../../PDF/QRLicencias.$N.png",30,125,20);
 
 	$pdf->Output("$pathPDF/licencias/$d.pdf", "F");
 

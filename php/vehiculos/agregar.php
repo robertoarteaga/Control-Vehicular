@@ -38,26 +38,24 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
 
     $pathXML = parse_ini_file('./../config/config.ini')['pathXML'];
     $dom = new SimpleXMLElement( '<?xml version = "1.0"
-    encoding = "utf-8" ?> <multas></multas>' );
-    $ing = $dom->addChild('multas');
-    $ing -> addChild('Vehiculo:',$vehiculo);
-    $ing -> addChild('Licencia:',$licencia);
-    $ing -> addChild('Motivo:',$motivo);
-    $ing -> addChild('Emisor:',$emisor);
-    $ing -> addChild('Monto:',$monto);
-    $ing -> addChild('Descripción:',$descripcion);
-    $ing -> addChild('Garantia:',$garantia);
-    $ing -> addChild('Fecha:',$date);
+    encoding = "utf-8" ?> <Conductores></Conductores>' );
+    $ing = $dom->addChild('conductores');
+    $ing -> addChild('Pripuetario:',$Propietario);
+    $ing -> addChild('NIV:',$NIV);
+    $ing -> addChild('Placa:',$Placa);
+    $ing -> addChild('Tipo:',$Tipo);
+    $ing -> addChild('Color:',$Color);
+    $ing -> addChild('Uso:',$Uso);
+    $ing -> addChild('Origen:',$Origen);
+    $ing -> addChild('Linea:',$Linea);
 
-    $xmlData = $dom->saveXML();
     $dom->formatOutput = true;
-    $d=$Vehiculo.'_'.date('is');
-    $strings_xml = $dom->saveXML("$pathXML/multas/$d.xml");
-
+    
     // die(var_dump($status));
     $owner = $Propietario;
     $pathPDF = parse_ini_file('./../config/config.ini')['pathPDF'];
     $d=$Propietario.'_'.date('is');
+    $strings_xml = $dom->saveXML("$pathXML/multas/$d.xml");
     include('../../PDF/vehiculos.php');
     require('../../PDF/Altas.php');
 
