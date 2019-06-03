@@ -1,6 +1,29 @@
 <?php
 
-require ('fpdf/fpdf.php');  
+
+require ('fpdf/fpdf.php');
+require "phpqrcode/qrlib.php";
+
+
+
+$dir='../../PDF';
+
+if(!file_exists($dir)){
+mkdir ($dir);}
+
+$filename= $dir."QRVehiculos.$Id.png";
+$tamano=6;
+$level ='M';
+$framSize= 3;
+$contenido="Numero de Vehiculo:" .$Id."\n
+           Placa:" .$Placa."\n
+				   NIV:" .$NIV."\n
+				   Tipo de Vehiculo:" .$Tipo;
+
+QRcode::png($contenido,$filename,$level,$tamano,$framSize);
+
+
+
   $pdf = new FPDF();
 	$pdf->AddPage('P', array(105,148));
 	$pdf->SetFont('Arial','B',15);
@@ -46,11 +69,11 @@ require ('fpdf/fpdf.php');
              $pdf-> Cell(20,4,utf8_decode('Línea: '),0,0,'L'); $pdf->SetFont('Arial','',10);$pdf-> Cell(0,5,utf8_decode($Linea),0,1,'C');
              $pdf->SetFont('Arial','B',10);
              $pdf-> Cell(20,4,utf8_decode('Origen: '),0,0,'L'); $pdf->SetFont('Arial','',10);$pdf-> Cell(0,5,utf8_decode($Origen),0,1,'C');
-             
+
              $pdf->image('./../../PDF/codigo.png',10,120,45,12);
-     
-	  
-    
+             $pdf->image("../../PDF/QRVehiculos.$Id.png",70,130,20);
+
+
 	$pdf->Output("$pathPDF/vehiculos/$d.pdf", "F");
 
 ?>

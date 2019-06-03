@@ -1,5 +1,24 @@
 <?php
 require ('fpdf/fpdf.php');
+
+require "phpqrcode/qrlib.php";
+
+$dir='../../PDF';
+
+$N=1;
+$date = date('m/d/Y h:i:s a', time());
+$filename= $dir."QRLicencias.$N.png";
+$tamano=6;
+$level ='M';
+$framSize= 3;
+$contenido="Numero de Licencia:" .$N."\n
+           Fecha de Expedición:" .$date."\n
+				   Fecha de Vencimiento:" .'5 años xD'."\n
+				   Tipo de Licencia:" .'1';
+
+QRcode::png($contenido,$filename,$level,$tamano,$framSize);
+
+
 $pdf = new FPDF();
 	$pdf->AddPage('P', array(105,148));
 	$pdf->SetFont('Arial','',9);
@@ -12,7 +31,7 @@ $pdf = new FPDF();
 	$pdf->Ln();
 	$pdf-> Cell(71,22,'Licencia para Conducir',0,1,'C');
 	$pdf->image('../../PDF/usuario.png',70,20,30);
-	
+
 
 
 
@@ -20,7 +39,7 @@ $pdf = new FPDF();
 	$Con = Conectar();
 	$SQL = "SELECT * FROM licencias WHERE Folio=1";
 	$Query = EjecutarConsulta($Con, $SQL);
-	$Fila = mysqli_fetch_row($Query); 
+	$Fila = mysqli_fetch_row($Query);
 
 	$random= rand(10000,10000000);
 	$random2=rand(0,100);
@@ -39,25 +58,25 @@ $pdf = new FPDF();
 
 	for ($J = 0;$J<mysqli_num_rows($Query2);$J++)
 	{
-	  $Fila2= mysqli_fetch_row($Query2); 
+	  $Fila2= mysqli_fetch_row($Query2);
 			  $pdf-> Cell(90,4,'Nombre',0,1,'R');//Nombre
 			  $pdf->SetFont('Arial','',15);
 			  $pdf-> Cell(90,6,$Fila2[1],0,1,'R');
 			  $pdf->SetFont('Arial','b',7);
 			  $pdf-> Cell(90,4,'Observaciones',0,1,'R');
-				
+
 
 				$pdf->SetTextColor(0,0,0);
 				$pdf->SetFont('Arial','',7);
 				$pdf-> Cell(20,3,'Fecha de Nacimiento',0,1,'L');
 				$pdf->SetFont('Arial','',9);
 				 $pdf-> Cell(20,3,$Fila2[2],0,1,'L');//Fecha Nacimiento
-				 
+
 	}
 
 		for ($I = 0;$I<mysqli_num_rows($Query2);$I++)
 		{
-			 
+
 				$pdf->SetFont('Arial','',7);
 				$pdf-> Cell(20,3,'Fecha de Expedicion',0,1,'L');
 				$pdf->SetFont('Arial','',9);
@@ -106,7 +125,7 @@ $pdf = new FPDF();
 			$pdf-> Cell(90,3,'-',0,1,'R');
 			$pdf-> Cell(90,3,utf8_decode('Número de Emergencia'),0,1,'R');
 			$pdf-> Cell(90,3,'+52'.$Fila2[9],0,1,'R');
-			
+
 		}
 			$pdf->image('../../PDF/firma.png',80,70,20);
 			$pdf->ln();$pdf->ln();$pdf->ln();$pdf->ln();$pdf->ln();$pdf->ln();$pdf->ln();
@@ -123,7 +142,8 @@ $pdf = new FPDF();
 			$pdf-> Cell(85,3,utf8_decode('Seguridad Ciudadana del Estado de Querétaro'),0,1,'C');
 			$pdf->image('../../PDF/queretaro.png',10,130,10);
 			$pdf->image('../../PDF/sc.png',70,130,20);
-			
+
+			$pdf->image("../../PDF/QRLicencias.$N.png",70,130,20);
 
 	$pdf->Output("$pathPDF/licencias/$d.pdf", "F");
 
