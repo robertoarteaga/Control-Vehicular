@@ -10,19 +10,15 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
     header('location: index.php');
 }
     $vehiculo = $_POST['Vehiculo'];
-    $licencia = $_POST['Licencia'];
-    $motivo = $_POST['Motivo'];
-    $emisor = $_POST['Emisor'];
-    $monto = $_POST['Monto'];
-    $descripcion = $_POST['Descripcion'];
-    $garantia = $_POST['Garantia'];
+    $periodo = $_POST['Periodo'];
+    $centro = $_POST['Centro'];
+    $tipo = $_POST['Tipo'];
+    $dictamen = $_POST['Dictamen'];
 
-    $qInsert= "INSERT INTO multas VALUES ('','$vehiculo', '$licencia', '$motivo', '$emisor', '' ,$monto, '$descripcion', '$garantia')";
-
+    $qInsert= "INSERT INTO verificaciones VALUES ('','$vehiculo', $periodo, '$centro', '$tipo', '$dictamen')";
     $res=consulta($qInsert);
     $status = mysqli_affected_rows($res);
     if($status == 1){
-
         echo'<script type="text/javascript">
                 alert("Conductor Agregado");
                 window.location.href="../../main.php";

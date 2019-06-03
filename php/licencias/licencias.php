@@ -26,12 +26,19 @@
                         <h3 class="mtop20">Introduzca los siguentes datos</h3>
                         <!-- FORMULARIO -->
                         <form action="agregar.php" method="POST" style="width:60%;">
-                            <div class="input-field mtop40">
-                                <label>RFC</label>
-                                <input type="text" name="rfc" id="rfc" class="validate"  required>
-                            </div>
+                            <select name="RFC">
+                                <option value="" disabled selected>Selecciona el RFC</option>
+                                <?php 
+                                    $qVehiculos = "SELECT RFC FROM conductores;";
+                                    $rVehiculos = select($qVehiculos);
+                                    // die(var_dump($rConductor));
+                                    while($rP = mysqli_fetch_array($rVehiculos)){
+                                ?>
+                                <option value="<?php echo($rP['RFC'])?>"><?php echo($rP['RFC'])?></option>
+                                <?php } ?>
+                            </select>
                             <div class="input-field">
-                                <select class="custom-select">
+                                <select class="custom-select" name="tipo-licencia">
                                     <option selected disabled>Tipo de licencia</option>
                                     <option value="A">Licencia tipo A</option>
                                     <option value="B">Licencia tipo B</option>
@@ -39,7 +46,7 @@
                                 </select>
                             </div>
                             <div class="input-field">
-                                <select class="custom-select">
+                                <select class="custom-select" name="donador">
                                     <option selected disabled>Es donador</option>
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
