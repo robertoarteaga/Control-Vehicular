@@ -32,7 +32,7 @@
                     <div class="container-all flex flex-column flex-center center-align">
                         <h3 class="mtop20">Introduzca los siguentes datos</h3>
                         <!-- FORMULARIO -->
-                        <form action="agregar.php" method="POST" style="width:60%;">
+                        <form action="agregar.php" method="POST" style="width:60%;" enctype="multipart/form-data">
                             <div class="input-field mtop40">
                                 <label>RFC</label>
                                     <input type="text" name="rfc" id="" class="validate"  required>
