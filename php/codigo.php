@@ -1,7 +1,6 @@
 <?php
 
-require("barcode.php");
-QRcode::png('123'); 
 
 ?>
 
+<img src ="barcode.php" alt = "testing" />

@@ -42,7 +42,6 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
                 $message = 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.';
             }
         }
-            
     }
 
     $qInsert= "INSERT INTO licencias VALUES ('', '$RFC', '$tipo', '$date', '$date2', '1', '$donador', '$newFileName')";
@@ -52,11 +51,12 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
     $res=consulta($qInsert);
     $status = mysqli_affected_rows($res);
     // die(var_dump($status));
-    if($status == 1){
+    if($status == 1){        
+        $pathPDF = parse_ini_file('./../config/config.ini')['pathPDF'];
         $pathXML = parse_ini_file('./../config/config.ini')['pathXML'];
         $dom = new SimpleXMLElement( '<?xml version = "1.0"
-        encoding = "utf-8" ?> <conductores></conductores>' );
-        $ing = $dom->addChild('Conductores');
+        encoding = "utf-8" ?> <Licencias></Licencias>' );
+        $ing = $dom->addChild('licencias');
         $ing -> addChild('RFC:',$RFC);
         $ing -> addChild('Tipo:',$tipo);
         $ing -> addChild('Donador:',$donador);

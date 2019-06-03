@@ -63,6 +63,8 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
         $d=$RFC.'_'.date('is');
         $strings_xml = $dom->saveXML("$pathXML/conductores/$d.xml");
 
+
+        
         
         echo'<script type="text/javascript">
                 alert("Conductor Agregado");

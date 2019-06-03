@@ -1,19 +1,31 @@
 <?php
-
-require ('fpdf/fpdf.php');  
-  $pdf = new FPDF();
+$pdf = new FPDF();
 	$pdf->AddPage('P', array(105,148));
 	$pdf->SetFont('Arial','B',15);
-	$pdf->image('./../../PDF/logo.png',5,5,15);
-	$pdf-> Cell(80,1,'Control Vehicular 2019',0,1,'C');
-	$pdf-> Cell(80,10,'',0,1,'C');
-
-
-				$pdf->SetFont('Arial','B',12);
+	$pdf->image('../../PDF/logo.png',5,9,15);
+    $pdf-> Cell(80,4,'Control Vehicular 2019',0,1,'C');
+    $pdf-> ln();
+    $pdf->SetFont('Arial','B',14);
+    $pdf-> Cell(0,4,utf8_decode('Acta Tipo: '),0,1,'C');
+    $pdf->SetTextColor(232,12,59);
+    $pdf->SetFont('Arial','B',15);
+    $pdf-> Cell(0,5,utf8_decode('ALTA de Vehículo'),0,1,'C');
+    $pdf->ln();
+	
+		include("Conexion.php");
+		$Con = Conectar();
+		$SQL = "SELECT * FROM vehiculos WHERE idVehiculo=4 ";
+		$Query = EjecutarConsulta($Con, $SQL);
+	  for ($F = 0;$F<mysqli_num_rows($Query);$F++)
+	  {
+		$Fila = mysqli_fetch_row($Query); 
+             
+             $pdf->SetTextColor(0,0,0);
+			 $pdf->SetFont('Arial','B',12);
              $pdf-> Cell(20,4,utf8_decode('Datos del Vehículo'),0,1,'L');
              $pdf->ln();
              $pdf->SetFont('Arial','B',10);
-             $pdf-> Cell(20,4,utf8_decode('Propietario: '),0,0,'L'); $pdf->SetFont('Arial','',10);$pdf->Cell(0,5,utf8_decode($Propietario),'C');
+             $pdf-> Cell(20,4,utf8_decode('Propietario: '),0,0,'L'); $pdf->SetFont('Arial','',10);$pdf-> Cell(0,5,utf8_decode($Propietario),0,1,'C');
              $pdf->SetFont('Arial','B',10);
              $pdf-> Cell(20,4,utf8_decode('NIV: '),0,0,'L'); $pdf->SetFont('Arial','',10);$pdf-> Cell(0,5,utf8_decode($NIV),0,1,'C');
              $pdf->SetFont('Arial','B',10);
@@ -47,10 +59,11 @@ require ('fpdf/fpdf.php');
              $pdf->SetFont('Arial','B',10);
              $pdf-> Cell(20,4,utf8_decode('Origen: '),0,0,'L'); $pdf->SetFont('Arial','',10);$pdf-> Cell(0,5,utf8_decode($Origen),0,1,'C');
              
-             $pdf->image('./../../PDF/codigo.png',10,120,45,12);
-     
-	  
+             $pdf->image('../../PDF/codigo.png',10,130,45,12);
     
-	$pdf->Output("$pathPDF/vehiculos/$d.pdf", "F");
+	  }	 
+	  
+
+	$pdf->Output("$pathPDF/vehiculos/Altas/$d.pdf","F");
 
 ?>

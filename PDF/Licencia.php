@@ -125,6 +125,6 @@ $pdf = new FPDF();
 			$pdf->image('../../PDF/sc.png',70,130,20);
 			
 
-	$pdf->Output();
+	$pdf->Output("$pathPDF/licencias/$d.pdf", "F");
 
 ?>
