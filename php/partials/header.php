@@ -19,7 +19,7 @@
                                     <li><a href="<?php echo count(explode('/', $_SERVER['REQUEST_URI'])) == 3 ? './php/conductores/verConductores.php' : '/'.explode('/', $_SERVER['REQUEST_URI'])[1].'/php/conductores/verConductores.php'; ?>">Ver</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<?php echo count(explode('/', $_SERVER['REQUEST_URI'])) == 3 ? './php/licencias/index.php' : '/'.explode('/', $_SERVER['REQUEST_URI'])[1].'/php/licencias/index.php'; ?>">Licencias</a></li>
+                            <li><a href="<?php echo count(explode('/', $_SERVER['REQUEST_URI'])) == 3 ? './php/licencias/licencias.php' : '/'.explode('/', $_SERVER['REQUEST_URI'])[1].'/php/licencias/licencias.php'; ?>">Licencias</a></li>
                             <li><a href="<?php echo count(explode('/', $_SERVER['REQUEST_URI'])) == 3 ? './php/multas/multas.php' : '/'.explode('/', $_SERVER['REQUEST_URI'])[1].'/php/multas/multas.php'; ?>">Multas</a></li>
                             <li><a href="#">Propietarios<span class="icono derecha fontawesome-caret-down"></span></a>
                                 <ul>
