@@ -20,7 +20,7 @@ require ('fpdf/fpdf.php');
              $pdf->SetFont('Arial','B',10);
              $pdf-> Cell(20,4,utf8_decode('Propietario: '),0,0,'L'); $pdf->SetFont('Arial','',10);$pdf->Cell(0,5,utf8_decode($Propietario),'C');
              $pdf->SetFont('Arial','B',10);
-             $pdf-> Cell(20,4,utf8_decode('NIV: '),0,0,'L'); $pdf->SetFont('Arial','',10);$pdf-> Cell(0,5,utf8_decode($NIV),0,1,'C');
+             $pdf-> Cell(20,4,utf8_decode('NIV: '),0,0,'C'); $pdf->SetFont('Arial','',10);$pdf-> Cell(0,5,utf8_decode($NIV),0,1,'C');
              $pdf->SetFont('Arial','B',10);
              $pdf-> Cell(20,4,utf8_decode('Placa: '),0,0,'L'); $pdf->SetFont('Arial','',10);$pdf-> Cell(0,5,utf8_decode($Placa),0,1,'C');
              $pdf->SetFont('Arial','B',10);

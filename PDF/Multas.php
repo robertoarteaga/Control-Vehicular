@@ -34,7 +34,7 @@ $Query = EjecutarConsulta($Con, $SQL);
 
    $pdf->SetFont('Arial','B',9);
    $pdf->Cell(0,2,utf8_decode(' '),0,1,'L');
-   $pdf->Cell(92,4,utf8_decode('Fecha de expedición '),0,0,'R') ; $pdf->SetFont('Arial','',9);$pdf-> Cell(0,4,$date,0,1,'R');
+   $pdf->Cell(92,4,utf8_decode('Fecha:'),0,0,'C') ; $pdf->SetFont('Arial','',9);$pdf-> Cell(0,4,$date,0,1,'R');
 }
 
 $SQL2="SELECT * FROM vehiculos WHERE idVehiculo=$vehiculo";
@@ -44,7 +44,7 @@ $Query2= EjecutarConsulta($Con, $SQL2);
 {
    $pdf->ln();
    $Fila2= mysqli_fetch_row($Query2);
-   $pdf->SetFont('Arial','B',9);$pdf->Cell(40,4,utf8_decode('Nombre  de Conductor:'),0,0,'L' );
+   $pdf->SetFont('Arial','B',9);$pdf->Cell(40,4,utf8_decode('RFC de Conductor:'),0,0,'L' );
    $pdf->SetFont('Arial','',9);
    $pdf->Cell(40,4,utf8_decode($Fila2[1]),0,1,'L' );
 

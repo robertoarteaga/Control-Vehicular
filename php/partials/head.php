@@ -28,6 +28,7 @@
             <script src="js/jquery.js"></script>
             <script src="js/functions.js"></script>
             <script src="js/materialize.min.js"></script>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <?php
         } else {
     ?>

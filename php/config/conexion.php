@@ -1,5 +1,4 @@
 <?php
-
 // CONEXION DE .ini
 function conexion(){
     //mysqli_connect('Servidor','usuario','contraseña','BD');

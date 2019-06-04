@@ -16,7 +16,7 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
     $dictamen = $_POST['Dictamen'];
 
     
-    $qInsert= "INSERT INTO verificaciones VALUES ('','$vehiculo', '$periodo', '$centro', '$tipo', '$dictamen')";
+    $qInsert= "INSERT INTO verificaciones VALUES ('','$vehiculo', '$periodo', '$centro', '$tipo', '$dictamen');";
     $res=consulta($qInsert);
     $status = mysqli_affected_rows($res);
     if($status == 1){
@@ -36,7 +36,7 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
         $strings_xml = $dom->saveXML("$pathXML/verificaciones/$d.xml");
         require('../../PDF/Verificacion.php');
         echo'<script type="text/javascript">
-                alert("Conductor Agregado");
+                alert("Verificación Agregada");
                 window.location.href="../../main.php";
                 </script>';
     }else{

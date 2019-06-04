@@ -36,14 +36,14 @@
                         <form action="agregar.php" method="POST" style="width:60%;">
                             <div class="input-field mtop40">
                                 <select name="Vehiculo">
-                                    <option value="" disabled selected>Selecciona el NIV</option>
+                                    <option value="" disabled selected>Selecciona el ID vehicular</option>
                                     <?php 
-                                        $qVehiculos = "SELECT NIV FROM vehiculos;";
+                                        $qVehiculos = "SELECT idVehiculo FROM vehiculos WHERE Estatus = 1;";
                                         $rVehiculos = select($qVehiculos);
                                         // die(var_dump($rConductor));
                                         while($rP = mysqli_fetch_array($rVehiculos)){
                                     ?>
-                                    <option value="<?php echo($rP['NIV'])?>"><?php echo($rP['NIV'])?></option>
+                                    <option value="<?php echo($rP['idVehiculo'])?>"><?php echo($rP['idVehiculo'])?></option>
                                     <?php } ?>
                                 </select>
                             <label>Vehículo</label>    

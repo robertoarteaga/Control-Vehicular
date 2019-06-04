@@ -45,12 +45,12 @@ if(!isset($_POST['NIV'])){
     $owner = $Propietario;
     $pathPDF = parse_ini_file('./../config/config.ini')['pathPDF'];
     $d=$Propietario.'_'.date('is');
-    $strings_xml = $dom->saveXML("$pathXML/vehiculos/$d.xml");
+    $strings_xml = $dom->saveXML("$pathXML/vehiculos/modificaciones/$d.xml");
 
 
     $qInsert= ('UPDATE vehiculos SET Propietario = "'.$Propietario.'", Placa = "'.$Placa.'", Tipo = "'.$Tipo.'", Color = "'.$Color.'", Uso = "'.$Uso.'", numPuerta = "'.$Puerta.'"
     , Marca = "'.$Marca.'",numMotor = "'.$Motor.'",numSerie = "'.$Serie.'",Modelo = "'.$Modelo.'",Combustible = "'.$Combustible.'",Year = "'.$Year.'",Cilindraje = "'.$Cilindraje.'", Transmision = "'.$Transmision.'", Linea = "'.$Linea.'", Origen = "'.$Origen.'" WHERE idVehiculo ="'.$id.'";');
-    die(var_dump($qInsert));
+    // die(var_dump($qInsert));
     
     $pathPDF = parse_ini_file('./../config/config.ini')['pathPDF'];
     require('../../PDF/Cambios.php');

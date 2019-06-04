@@ -42,7 +42,7 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
 
         $xmlData = $dom->saveXML();
         $dom->formatOutput = true;
-        $d=$Vehiculo.'_'.date('is');
+        $d=$vehiculo.'_'.date('is');
         $strings_xml = $dom->saveXML("$pathXML/multas/$d.xml");
 
 

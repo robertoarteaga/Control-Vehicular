@@ -55,7 +55,7 @@ if(is_null($_SESSION['usuario']) && $_SESSION['usuario'] == 0){
     $owner = $Propietario;
     $pathPDF = parse_ini_file('./../config/config.ini')['pathPDF'];
     $d=$Propietario.'_'.date('is');
-    $strings_xml = $dom->saveXML("$pathXML/vehiculos/$d.xml");
+    $strings_xml = $dom->saveXML("$pathXML/vehiculos/altas/$d.xml");
     include('../../PDF/vehiculos.php');
     require('../../PDF/Altas.php');
 
